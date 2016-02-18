@@ -54,14 +54,15 @@ return [
 
         'mysql' => [
             'driver'    => 'mysql',
-            'host'      => '158.69.216.8',
-            'database'  => 'property',
-            'username'  => 'root',
-            'password'  => 'mubeen',
+            'host'      => env('DB_MYSQL_HOST', 'localhost'),
+            'database'  => env('DB_MYSQL_DATABASE', 'forge'),
+            'username'  => env('DB_MYSQL_USERNAME', 'forge'),
+            'password'  => env('DB_MYSQL_PASSWORD', ''),
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',
             'strict'    => false,
+            'engine'    => null,
         ],
 
         'pgsql' => [
@@ -84,15 +85,15 @@ return [
             'charset'  => 'utf8',
             'prefix'   => '',
         ],
-
         'mongoDB' => array(
             'driver'   => 'mongodb',
-            'host'     => 'ds011288.mongolab.com',
-            'port'     => '11288',
-            'username' => 'property',
-            'password' => 'pr0p3rty',
-            'database' => 'property_db'
-        )
+            'host'     => env('DB_MONGO_HOST', 'localhost'),
+            'port'     => env('DB_MONGO_PORT', '27017'),
+            'username' => env('DB_MONGO_USERNAME', 'forge'),
+            'password' => env('DB_MONGO_PASSWORD', ''),
+            'database' => env('DB_MONGO_DATABASE', 'forge'),
+        ),
+
     ],
 
     /*
