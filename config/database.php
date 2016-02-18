@@ -54,20 +54,8 @@ return [
 
         'mysql' => [
             'driver'    => 'mysql',
-            'host'      => env('DB_HOST', 'localhost'),
-            'database'  => env('DB_DATABASE', 'forge'),
-            'username'  => env('DB_USERNAME', 'forge'),
-            'password'  => env('DB_PASSWORD', ''),
-            'charset'   => 'utf8',
-            'collation' => 'utf8_unicode_ci',
-            'prefix'    => '',
-            'strict'    => false,
-        ],
-
-        'mysql_old' => [
-            'driver'    => 'mysql',
             'host'      => '158.69.216.8',
-            'database'  => 'test_bd_new',
+            'database'  => 'property',
             'username'  => 'root',
             'password'  => 'mubeen',
             'charset'   => 'utf8',
@@ -99,20 +87,11 @@ return [
 
         'mongoDB' => array(
             'driver'   => 'mongodb',
-            'host'     => 'ds039175.mongolab.com',
-            'port'     => '39175',
-            'username' => 'root',
-            'password' => 'root',
-            'database' => 'brokergenius_mongo'
-        ),
-
-        'oldMongoDB' => array(
-            'driver'   => 'mongodb',
-            'host'     => 'ds051595.mongolab.com',
-            'port'     => '51595',
-            'username' => 'root',
-            'password' => 'root',
-            'database' => 'old_brokergenius'
+            'host'     => 'ds011288.mongolab.com',
+            'port'     => '11288',
+            'username' => 'property',
+            'password' => 'pr0p3rty',
+            'database' => 'property_db'
         )
     ],
 
