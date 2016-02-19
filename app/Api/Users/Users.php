@@ -42,7 +42,7 @@ class Users{
 			var_dump($result);
 			if(!$result)
 				throw new \Exception('User not updated in SQL');
-			$data['user_id'] = $data['id'];
+			$data['user_id'] = intval($data['id']);
 			unset($data['id']);
 			$mongoResult = $this->UsersMongoHandler->updateUser($data);
 			if(!$mongoResult)
