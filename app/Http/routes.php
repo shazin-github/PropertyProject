@@ -9,11 +9,17 @@ Route::group(['prefix' => 'v1'], function(){
 	Route::put('user', "MainController@updateUser");
 	// Route::get('user', "MainController@showUser");
 
-	// Route::post('property/location', "MainController@addLocation");
-	// Route::put('property/location', "MainController@updateLocation");
+	Route::post('location', "MainController@addLocation");
+	Route::put('location', "MainController@updateLocation");
 
-	// Route::post('property', "MainController@addProperty");
-	// Route::put('property', "MainController@updateProperty");
+	Route::post('features', "MainController@addFeatures");
+	Route::put('features', "MainController@updateFeatures");
+
+	Route::post('property', "MainController@addProperty");
+	Route::put('property', "MainController@updateProperty");
+
+	Route::post('seller', "MainController@addSeller");
+	Route::put('seller', "MainController@updateSeller");
 	
 });
 
