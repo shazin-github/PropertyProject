@@ -40,6 +40,7 @@ class LocationTableSeeder extends Seeder
 
             // Insert In Mongo
             $locationMongo = LocationMongo::create([
+                '_id' => $location->id,
                 'address' => $address,
                 'city' => $city,
                 'zip' => $zip,

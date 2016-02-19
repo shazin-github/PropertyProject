@@ -42,6 +42,7 @@ class SoldHistoryTableSeeder extends Seeder
             ]);
 
             $soldhistoryMongo = SoldHistoryMongo::create([
+                '_id' => $soldhistory->id,
                 'property_id' => $property_id,
                 'seller_id' => $seller_id,
                 'buyer_id' => $buyer_id,

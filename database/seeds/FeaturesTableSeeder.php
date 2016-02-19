@@ -39,6 +39,7 @@ class FeaturesTableSeeder extends Seeder
 
             // Insert In Mongo
             $featureMongo = FeaturesMongo::create([
+                '_id' => $feature->id,
                 'bedrooms' => $bedrooms,
                 'bathrooms' => $bathrooms,
                 'utilities' => $utilities,

@@ -33,6 +33,7 @@ class WatchlistTableSeeder extends Seeder
 
             // Insert In Mongo
             $watchlistMongo = WatchlistMongo::create([
+                '_id' => $watchlist->id,
                 'property_id' => $property_id,
                 'user_id' => $user_id,
             ]);

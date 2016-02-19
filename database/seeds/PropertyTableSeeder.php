@@ -45,6 +45,7 @@ class PropertyTableSeeder extends Seeder
 
             // Insert In Mongo
             $propertyMongo = PropertyMongo::create([
+                '_id' => $property->id,
                 'street' => $street,
                 'price' => $price,
                 'area' => $area,

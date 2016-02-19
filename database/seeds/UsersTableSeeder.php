@@ -41,6 +41,7 @@ class UsersTableSeeder extends Seeder
 
             // Insert In Mongo
             $userMongo = UserMongo::create([
+                '_id' => $user->id,
                 'username' => $username,
                 'firstname' => $firstname,
                 'lastname' => $lastname,
