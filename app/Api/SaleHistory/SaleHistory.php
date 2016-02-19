@@ -1,8 +1,8 @@
 <?php
-namespace App\Api\Property;
+namespace App\Api\SaleHistory;
 use \DB;
 use GuzzleHttp\Client as Guzzle;
 
-class Property{
+class SaleHistory{
 
 }

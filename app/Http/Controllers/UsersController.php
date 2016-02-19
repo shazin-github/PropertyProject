@@ -11,7 +11,7 @@ Use App\Api\Response\Response;
 use App\Api\Users\Users;
 use App\Api\Property\Property;
 
-class MainController extends Controller{
+class UsersController extends Controller{
     protected $request;
     protected $response;
 

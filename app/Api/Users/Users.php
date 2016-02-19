@@ -4,7 +4,6 @@ use \DB;
 use GuzzleHttp\Client as Guzzle;
 use App\Api\Users\UsersSqlHandler;
 use App\Api\Users\UsersMongoHandler;
-use App\Api\Property\Property;
 
 class Users{
 	protected $guzzle;
