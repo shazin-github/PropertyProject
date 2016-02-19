@@ -110,7 +110,7 @@ class Property{
 			if(!$mongoId)
 				throw new \Exception('Property not inserted in Mongo');
 			DB::commit();
-			return $id;
+			return $property_id;
 		} catch(\Exception $e){
 			DB::rollback();
 			var_dump($e);
