@@ -24,6 +24,7 @@ class CreateLocationTable extends Migration
             $table->string('country', 100)->index();
             $table->float('latitude');
             $table->float('longitude');
+            $table->tinyInteger('status');
             $table->timestamps();
         });
 
