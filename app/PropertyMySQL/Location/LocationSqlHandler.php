@@ -3,7 +3,11 @@ namespace App\PropertyMySQL\Location;
 use \DB;
 use GuzzleHttp\Client as Guzzle;
 
+use App\PropertyMySQL\Response\Response;
+
 class LocationSqlHandler{
+
+
 
     public function addlocation($data){
         //dd($data);

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "223512a1177b9d2b661ae3bdfa5bb81f",
+    "hash": "b33fb371e198323423408a9fb15bb79f",
     "content-hash": "d590c67929305cb37d4fedb716452091",
     "packages": [
         {
@@ -530,12 +530,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "c933c93be8ae7d75319690368d8e3d29d33b36db"
+                "reference": "ecd33017b159b0e95c632042ef25c32453f0594c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/c933c93be8ae7d75319690368d8e3d29d33b36db",
-                "reference": "c933c93be8ae7d75319690368d8e3d29d33b36db",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/ecd33017b159b0e95c632042ef25c32453f0594c",
+                "reference": "ecd33017b159b0e95c632042ef25c32453f0594c",
                 "shasum": ""
             },
             "require": {
@@ -650,7 +650,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2016-02-17 22:56:32"
+            "time": "2016-02-18 16:31:35"
         },
         {
             "name": "league/flysystem",

@@ -4,6 +4,8 @@ use \DB;
 
 use App\PropertyMySQL\Location\LocationSqlHandler;
 
+use App\PropertyMySQL\Response\Response;
+
 use GuzzleHttp\Client as Guzzle;
 
 class Location{
@@ -62,13 +64,6 @@ class Location{
                 throw new \Exception('Location not updated in SQL');
 
 
-//            $mongoResult = $this->LocationMongoHandler->updateLocation($data);
-//
-//            dd($mongoResult);
-//
-//            if(!$mongoResult)
-//                throw new \Exception('Location not updated in Mongo');
-
             DB::commit();
             return $result;
         } catch(\Exception $e){
@@ -87,12 +82,6 @@ class Location{
             if(!$resultfromSQL)
 
                 throw new \Exception('Location not found in SQL');
-
-//            $resultfromMongo  = $this->LocationMongoHandler->ShowLocationbyId($data);
-//
-//            if(!$resultfromMongo)
-//
-//                throw new \Exception('User not found in MongoDB');
 
             return $resultfromSQL;
 
