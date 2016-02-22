@@ -7,9 +7,9 @@ use Illuminate\Support\Facades\Input;
 use \Validator;
 use \Cache;
 
-Use App\Api\Response\Response;
-use App\Api\Users\Users;
-use App\Api\Property\Property;
+Use App\PropertyMySQL\Response\Response;
+use App\PropertyMySQL\Users\Users;
+use App\PropertyMySQL\Property\Property;
 
 class UsersController extends Controller{
     protected $request;

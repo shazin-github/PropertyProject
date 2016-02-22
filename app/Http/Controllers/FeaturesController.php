@@ -6,9 +6,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
 use \Validator;
 use \Cache;
-Use App\Api\Response\Response;
+Use App\PropertyMySQL\Response\Response;
 
-use App\Api\Users\Users;
+use App\PropertyMySQL\Users\Users;
 
 class FeaturesController extends Controller{
     protected $request;

@@ -1,6 +1,6 @@
 <?php
 
-	namespace App\Api\Users;
+	namespace App\PropertyMySQL\Users;
 
 	/**
 	* @author: Mubin

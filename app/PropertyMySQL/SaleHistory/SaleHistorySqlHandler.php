@@ -1,5 +1,5 @@
 <?php
-namespace App\Api\SaleHistory;
+namespace App\PropertyMySQL\SaleHistory;
 use \DB;
 use GuzzleHttp\Client as Guzzle;
 

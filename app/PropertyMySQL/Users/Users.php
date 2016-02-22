@@ -1,19 +1,18 @@
 <?php
-namespace App\Api\Users;
+namespace App\PropertyMySQL\Users;
 use \DB;
 use GuzzleHttp\Client as Guzzle;
-use App\Api\Users\UsersSqlHandler;
-use App\Api\Users\UsersMongoHandler;
+use App\PropertyMySQL\Users\UsersSqlHandler;
 
 class Users{
 	protected $guzzle;
 	protected $UsersSqlHandler;
-	protected $UsersMongoHandler;
+	//protected $UsersMongoHandler;
 
-	function __construct(Guzzle $guzzle, UsersSqlHandler $UsersSqlHandler, UsersMongoHandler $UsersMongoHandler){
+	function __construct(Guzzle $guzzle, UsersSqlHandler $UsersSqlHandler){
 		$this->guzzle = $guzzle;
 		$this->UsersSqlHandler = $UsersSqlHandler;
-		$this->UsersMongoHandler = $UsersMongoHandler;
+		//$this->UsersMongoHandler = $UsersMongoHandler;
 	}
 	
 	public function addUser($data){
@@ -22,10 +21,10 @@ class Users{
 			$id = $this->UsersSqlHandler->addUser($data);
 			if(!$id)
 				throw new \Exception('User not inserted in SQL');
-			$data['user_id'] = $id;
-			$mongoId = $this->UsersMongoHandler->addUser($data);
-			if(!$mongoId)
-				throw new \Exception('User not inserted in Mongo');
+//			$data['user_id'] = $id;
+//			$mongoId = $this->UsersMongoHandler->addUser($data);
+//			if(!$mongoId)
+//				throw new \Exception('User not inserted in Mongo');
 			DB::commit();
 			return $id;
 		} catch(\Exception $e){
@@ -41,11 +40,11 @@ class Users{
 			var_dump($result);
 			if(!$result)
 				throw new \Exception('User not updated in SQL');
-			$data['user_id'] = intval($data['id']);
-			unset($data['id']);
-			$mongoResult = $this->UsersMongoHandler->updateUser($data);
-			if(!$mongoResult)
-				throw new \Exception('User not updated in Mongo');
+//			$data['user_id'] = intval($data['id']);
+//			unset($data['id']);
+//			$mongoResult = $this->UsersMongoHandler->updateUser($data);
+//			if(!$mongoResult)
+//				throw new \Exception('User not updated in Mongo');
 			
 			DB::commit();
 			return $result;

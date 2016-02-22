@@ -1,6 +1,6 @@
 <?php
 
-	namespace App\Api\Response;
+	namespace App\PropertyMySQL\Response;
 
 	//Use base status codes
 	use Illuminate\Http\Response as code;

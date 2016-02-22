@@ -1,5 +1,5 @@
 <?php
-namespace App\Api\Buyer;
+namespace App\PropertyMySQL\Buyer;
 use \DB;
 use GuzzleHttp\Client as Guzzle;
 

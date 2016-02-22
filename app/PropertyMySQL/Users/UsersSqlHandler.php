@@ -1,5 +1,5 @@
 <?php
-namespace App\Api\Users;
+namespace App\PropertyMySQL\Users;
 use \DB;
 
 class UsersSqlHandler{
