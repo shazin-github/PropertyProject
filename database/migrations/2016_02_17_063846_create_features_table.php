@@ -17,7 +17,7 @@ class CreateFeaturesTable extends Migration
             $table->engine = 'InnoDB';
 
             $table->increments('id');
-            $table->unique('property_id')->unsigned();
+            $table->unique('property_id')->unsigned();// make it unique and unsigned
             $table->integer('bedrooms')->index();
             $table->integer('bathrooms')->index();
             $table->text('utilities');
