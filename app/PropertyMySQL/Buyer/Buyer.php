@@ -23,8 +23,6 @@ class Buyer{
             $result = $this->buyerSqlHandler->addBuyer($data);
 
             var_dump($result);
-            if(!$result)
-                throw new \Exception('Buyer not added in SQL');
 
             DB::commit();
             return $result;
@@ -38,10 +36,6 @@ class Buyer{
 
         try{
             $resultfromSQL  = $this->buyerSqlHandler->ShowBuyerbyId($data);
-
-            if(!$resultfromSQL)
-
-                throw new \Exception('Buyer not found in SQL');
 
             return $resultfromSQL;
 
@@ -57,10 +51,6 @@ class Buyer{
         try{
             $resultfromSQL  = $this->buyerSqlHandler->ShowBuyerbyProperty_Id($data);
 
-            if(!$resultfromSQL)
-
-                throw new \Exception('Buyer not found in SQL');
-
             return $resultfromSQL;
 
         } catch (\Exception $e) {
@@ -75,10 +65,6 @@ class Buyer{
 
         try{
             $resultfromSQL  = $this->buyerSqlHandler->ShowBuyerbyuser_Id($data);
-
-            if(!$resultfromSQL)
-
-                throw new \Exception('Buyer not found in SQL');
 
             return $resultfromSQL;
 

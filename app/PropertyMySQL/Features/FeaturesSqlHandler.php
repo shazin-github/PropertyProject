@@ -30,18 +30,15 @@ class FeaturesSqlHandler{
 
     public function updateFeaturebyId($data){
 
+
         $data['updated_at'] = date('Y-m-d', strtotime('now'));
+
         $result = DB::table('features')->where('id', $data['id'])->update($data);
 
-        var_dump($result);
-
-        //dd($result);
-
-        if($result < 1 )
-
-            return false;
-        else
+        if($result)
             return $result;
+        else
+            return false;
 
     }
 
@@ -61,5 +58,45 @@ class FeaturesSqlHandler{
             return $result;
         else
             return false;
+    }
+
+    public function ShowByNumberOfBedrooms($data){
+
+        $result = DB::table('features')->where('bedrooms',$data['beds'])->get();
+
+        if($result){
+            return $result;
+        }else{
+            return false;
+        }
+
+    }
+
+    public function ShowByNumberOfBathrooms($data){
+
+        $result = DB::table('features')->where('bathrooms',$data['bath'])->get();
+
+        if($result){
+            return $result;
+        }else{
+            return false;
+        }
+
+    }
+
+    public function ShowWithBathAndBedroomd($data)
+    {
+
+        $result = DB::table('features')
+            ->where('bathrooms',$data['bath'])
+            ->where('bedrooms',$data['bed'])
+            ->get();
+
+        if($result){
+            return $result;
+        }else{
+            return false;
+        }
+
     }
 }

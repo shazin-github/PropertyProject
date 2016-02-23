@@ -28,8 +28,6 @@ class Features{
             $result = $this->FeaturesSqlHandler->addFeature($data);
 
             var_dump($result);
-            if(!$result)
-                throw new \Exception('Feature not added in SQL');
 
             DB::commit();
             return $result;
@@ -64,11 +62,6 @@ class Features{
         try{
             $result = $this->FeaturesSqlHandler->updateFeaturebyId($data);
 
-            if(!$result){
-                //dd($result);
-                $this->response->not_found();
-            }
-
 
             DB::commit();
             return $result;
@@ -83,12 +76,6 @@ class Features{
         try{
             $resultfromSQL  = $this->FeaturesSqlHandler->ShowFeaturebyProperty_Id($data);
 
-
-
-            if(!$resultfromSQL)
-
-                $this->response->not_found();
-
             return $resultfromSQL;
 
         } catch (\Exception $e) {
@@ -102,15 +89,52 @@ class Features{
         try{
             $resultfromSQL  = $this->FeaturesSqlHandler->ShowFeaturebyProperty_Id($data);
 
-
-
-            if(!$resultfromSQL)
-
-                $this->response->record_notFound('Record Not Found ');
-
             return $resultfromSQL;
 
         } catch (\Exception $e) {
+            var_dump($e);
+        }
+
+    }
+
+    public function ShowByNumberOfBedrooms($data){
+
+        try{
+
+            $result = $this->FeaturesSqlHandler->ShowByNumberOfBedrooms($data);
+
+            return $result;
+        }catch(\Exception $e){
+
+            var_dump($e);
+        }
+
+    }
+
+    public function ShowByNumberOfBathrooms($data){
+
+        try{
+
+            $result = $this->FeaturesSqlHandler->ShowByNumberOfBathrooms($data);
+
+            return $result;
+        }catch(\Exception $e){
+
+            var_dump($e);
+        }
+
+    }
+
+
+    public function ShowWithBathAndBedroomd($data){
+
+        try{
+
+            $result = $this->FeaturesSqlHandler->ShowWithBathAndBedroomd($data);
+
+            return $result;
+        }catch(\Exception $e){
+
             var_dump($e);
         }
 

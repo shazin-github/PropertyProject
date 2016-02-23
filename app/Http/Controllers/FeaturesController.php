@@ -80,7 +80,7 @@ class FeaturesController extends Controller{
 
         } else {
 
-            return $this->response->application_error('Unable to process request');
+            return $this->response->not_found('Invalid Request ID');
 
         }
     }
@@ -88,6 +88,8 @@ class FeaturesController extends Controller{
     public function updateFeaturebyId(){
 
         $data = $this->request->all();
+
+
 
         $validator = Validator::make($data,[
 
@@ -109,7 +111,7 @@ class FeaturesController extends Controller{
 
         } else {
 
-            return $this->response->application_error('Unable to process request');
+            return $this->response->not_found('Invalid Request ID');
 
         }
     }
@@ -139,7 +141,7 @@ class FeaturesController extends Controller{
 
         } else {
 
-            return $this->response->application_error('Unable to process request');
+            return $this->response->not_found('Invalid Request ID');
 
         }
     }
@@ -169,8 +171,97 @@ class FeaturesController extends Controller{
 
         } else {
 
-            return $this->response->application_error('Unable to process request');
+            return $this->response->not_found('Invalid Request ID');
 
         }
+    }
+
+    public function ShowByNumberOfBedrooms(){
+
+        $data = $this->request->all();
+
+
+        $validator = Validator::make($data,[
+
+            'beds' => 'required'
+
+        ]);
+
+        if ($validator->fails()) {
+
+            return $this->response->bad_request($validator->errors()->all());
+
+        }
+
+        $result = $this->features->ShowByNumberOfBedrooms($data);
+
+        if($result)
+        {
+            return $this->response->success(($result));
+        }else{
+
+            return $this->response->not_found('Requested Data Not Found');
+        }
+
+    }
+
+    public function ShowByNumberOfBathrooms(){
+
+        $data = $this->request->all();
+
+
+        $validator = Validator::make($data,[
+
+            'bath' => 'required'
+
+        ]);
+
+        if ($validator->fails()) {
+
+            return $this->response->bad_request($validator->errors()->all());
+
+        }
+
+        $result = $this->features->ShowByNumberOfBathrooms($data);
+
+        if($result)
+        {
+            return $this->response->success(($result));
+        }else{
+
+            return $this->response->not_found('Requested Data Not Found');
+        }
+
+
+    }
+
+    public function ShowWithBathAndBedroomd(){
+
+        $data = $this->request->all();
+
+        $validator = Validator::make($data,[
+
+            'bath' => 'required',
+            'bed'  => 'required'
+
+        ]);
+
+        if ($validator->fails()) {
+
+            return $this->response->bad_request($validator->errors()->all());
+
+        }
+
+        $result = $this->features->ShowWithBathAndBedroomd($data);
+
+        if($result)
+        {
+            return $this->response->success(($result));
+        }else{
+
+            return $this->response->not_found('Requested Data Not Found');
+        }
+
+
     }
 }

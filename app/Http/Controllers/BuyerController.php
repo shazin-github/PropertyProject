@@ -81,7 +81,7 @@ class BuyerController extends Controller{
 
         } else {
 
-            return $this->response->application_error('Unable to process request');
+            return $this->response->not_found('Invalid Request ID');
 
         }
     }
@@ -110,7 +110,7 @@ class BuyerController extends Controller{
 
         } else {
 
-            return $this->response->application_error('Unable to process request');
+            return $this->response->not_found('Invalid Request ID');
 
         }
     }
@@ -139,7 +139,7 @@ class BuyerController extends Controller{
 
         } else {
 
-            return $this->response->application_error('Unable to process request');
+            return $this->response->not_found('Invalid Request ID');
 
         }
     }
