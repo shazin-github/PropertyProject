@@ -3,19 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f968cd95-e743-437e-acbc-94aa16ab890a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/BuyerController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/BuyerController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/FeaturesController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/FeaturesController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/SaleHistoryController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/SaleHistoryController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/SellerController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/SellerController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PropertyMySQL/Buyer/Buyer.php" afterPath="$PROJECT_DIR$/app/PropertyMySQL/Buyer/Buyer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PropertyMySQL/Features/Features.php" afterPath="$PROJECT_DIR$/app/PropertyMySQL/Features/Features.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PropertyMySQL/Features/FeaturesSqlHandler.php" afterPath="$PROJECT_DIR$/app/PropertyMySQL/Features/FeaturesSqlHandler.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PropertyMySQL/SaleHistory/SaleHistory.php" afterPath="$PROJECT_DIR$/app/PropertyMySQL/SaleHistory/SaleHistory.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PropertyMySQL/SaleHistory/SaleHistorySqlHandler.php" afterPath="$PROJECT_DIR$/app/PropertyMySQL/SaleHistory/SaleHistorySqlHandler.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PropertyMySQL/Seller/Seller.php" afterPath="$PROJECT_DIR$/app/PropertyMySQL/Seller/Seller.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PropertyMySQL/Seller/SellerSqlHandler.php" afterPath="$PROJECT_DIR$/app/PropertyMySQL/Seller/SellerSqlHandler.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_02_17_063846_create_features_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_02_17_063846_create_features_table.php" />
     </list>
     <ignored path="PropertyProject-master.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -539,7 +526,13 @@
       <option name="project" value="LOCAL" />
       <updated>1456151161970</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Backend Api's changes (Location , Buyer , Feature , Seller , SaleHistory )">
+      <created>1456237746956</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1456237746956</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -548,6 +541,7 @@
     <layout>
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -555,7 +549,6 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -581,7 +574,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Backend Api's changes (Location)" />
     <MESSAGE value="Backend Api's changes (Location , Buyer , Feature)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Backend Api's changes (Location , Buyer , Feature)" />
+    <MESSAGE value="Backend Api's changes (Location , Buyer , Feature , Seller , SaleHistory )" />
+    <option name="LAST_COMMIT_MESSAGE" value="Backend Api's changes (Location , Buyer , Feature , Seller , SaleHistory )" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
