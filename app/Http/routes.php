@@ -39,7 +39,7 @@ Route::group(['prefix' => 'v1'], function(){
 
 
 
-	// Buyer Api seller
+	// Seller Api Route
 	Route::post('Seller', "SellerController@addSeller"); // for insert
 	Route::get('Seller' , "SellerController@ShowSellerbyId" );   // for select
 	Route::get('Seller/ByProperty' , "SellerController@ShowSellerbyProperty_Id" );   // for select
@@ -61,18 +61,20 @@ Route::group(['prefix' => 'v1'], function(){
 
 	//property Api Route
 
-	//add
-	//update by id
+	Route::post('property', "PropertyController@addproperty");//add
+	Route::put('property/by-id' , "PropertyController@updatebyID");//update by id
 	//update location
-	//search by add
-	//search by street
-	//search between two price
+	Route::get('property/SearchById',"PropertyController@SearchByID");//search by id
+	Route::get('property/SearchByStreet',"PropertyController@SearchByStreet");//search by street
+	Route::get('property/SearchWithPrice',"PropertyController@SearchWithPrice");//search between two price
 	//search by utility
-	//search by purpose
-	//search by type
-	//search by category
-	//delete or disabled by changing status
-	//search by status
+	Route::get('property/SearchWithPropertyPurpose',"PropertyController@SearchWithPropertyPurpose");//search by purpose
+	Route::get('property/SearchWithPropertyType',"PropertyController@SearchWithPropertyType");//search by type
+	Route::get('property/SearchWithPropertycategory',"PropertyController@SearchWithPropertyCategory");//search by category
+	Route::delete('property',"PropertyController@HideProperty");   //delete or disabled by changing status
+	Route::get('property/SearchWithSatatus',"PropertyController@SearchWithStatus");//search by status
+	Route::get('property/SearchLike' , "PropertyController@SearchLike");//Group Search
+
 
 
 });

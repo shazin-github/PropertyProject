@@ -26,22 +26,13 @@ class Location{
 
     public function addLocation($data){
 
-        //dd($data);
-
-        //dd($this->LocationSqlHandler);
 
         DB::beginTransaction();
         try{
             $id = $this->LocationSqlHandler->addlocation($data);
             if(!$id)
                 throw new \Exception('Location not inserted in SQL');
-            //$data['_id'] = $id;
 
-
-
-//            $mongoId = $this->LocationMongoHandler->addlocation($data);
-//            if(!$mongoId)
-//                throw new \Exception('Location not inserted in Mongo');
             DB::commit();
             return $id;
         } catch(\Exception $e){
