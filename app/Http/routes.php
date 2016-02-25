@@ -8,7 +8,12 @@ Route::group(['prefix' => 'v1'], function(){
 	//User Api Route
 	Route::post('user', "UsersController@addUser"); //for insert
 	Route::put('user', "UsersController@updateUser"); //for update
-	Route::get('user', "UsersController@showUser"); //for select
+	//Route::get('user', "UsersController@showUser"); //for select
+
+	Route::get('user/userAuthenticate' , "UsersController@userAuthenticate");
+	Route::get('user/checkemail',"UsersController@checkemail");
+
+	Route::get('user/checkusername',"UsersController@checkusername");
 
 
 
@@ -67,6 +72,10 @@ Route::group(['prefix' => 'v1'], function(){
 	Route::get('property/SearchById',"PropertyController@SearchByID");//search by id
 	Route::get('property/SearchByStreet',"PropertyController@SearchByStreet");//search by street
 	Route::get('property/SearchWithPrice',"PropertyController@SearchWithPrice");//search between two price
+
+	Route::get('property/SearchWithMaxPrice' , "PropertyController@SearchWithMaxPrice");
+	Route::get('property/SearchWithMinPrice' , "PropertyController@SearchWithMinPrice");
+
 	//search by utility
 	Route::get('property/SearchWithPropertyPurpose',"PropertyController@SearchWithPropertyPurpose");//search by purpose
 	Route::get('property/SearchWithPropertyType',"PropertyController@SearchWithPropertyType");//search by type

@@ -19,12 +19,7 @@ class Users{
 		DB::beginTransaction();
 		try{
 			$id = $this->UsersSqlHandler->addUser($data);
-			if(!$id)
-				throw new \Exception('User not inserted in SQL');
-//			$data['user_id'] = $id;
-//			$mongoId = $this->UsersMongoHandler->addUser($data);
-//			if(!$mongoId)
-//				throw new \Exception('User not inserted in Mongo');
+
 			DB::commit();
 			return $id;
 		} catch(\Exception $e){
@@ -52,5 +47,41 @@ class Users{
 			DB::rollback();
 			var_dump($e);
 		}
+	}
+
+	public function userAuthenticate($data){
+
+		$result = $this->UsersSqlHandler->userAuthenticate($data);
+
+
+		if($result)
+			return true;
+		else{
+			return false;
+		}
+	}
+
+	public function checkemail($data){
+
+		$result = $this->UsersSqlHandler->checkemail($data);
+
+		if($result)
+			return true;
+		else{
+			return false;
+		}
+
+	}
+
+	public function checkusername($data){
+
+		$result = $this->UsersSqlHandler->checkusername($data);
+
+		if($result)
+			return true;
+		else{
+			return false;
+		}
+
 	}
 }

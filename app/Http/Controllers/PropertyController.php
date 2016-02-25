@@ -172,6 +172,7 @@ class PropertyController extends Controller{
 
             'min'    => 'required',
             'max'    => 'required'
+
         ]);
 
         if ($validator->fails()) {
@@ -179,6 +180,7 @@ class PropertyController extends Controller{
             return $this->response->bad_request($validator->errors()->all());
 
         }
+
 
         $result = $this->property->SearchWithPrice($data);
 
@@ -193,5 +195,7 @@ class PropertyController extends Controller{
         }
 
     }
+
+
 
 }

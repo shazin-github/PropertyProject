@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Input;
 use \Validator;
 use \Cache;
 
+
+
 Use App\PropertyMySQL\Response\Response;
 use App\PropertyMySQL\Users\Users;
 use App\PropertyMySQL\Property\Property;
@@ -19,6 +21,9 @@ class UsersController extends Controller{
     protected $property;
 
     public function __construct(Request $request, Response $response, Users $users, Property $property){
+
+
+
         $this->request = $request;
         $this->response = $response;
 
@@ -28,11 +33,14 @@ class UsersController extends Controller{
 
     public function addUser() {
         $data = $this->request->all();
+
+
         $validator = Validator::make($data,[
             'username' => 'required',
             'email' => 'required',
             'password' => 'required',
-            'loc_id' => 'required'
+            'firstname'=>'required',
+            'phone' => 'required'
         ]);
 
         if ($validator->fails()) {
@@ -210,4 +218,76 @@ class UsersController extends Controller{
             return $this->response->application_error('Unable to process request');
         }
     }
+
+    public function userAuthenticate(){
+
+
+
+        $data = $this->request->all();
+
+
+        $validator = Validator::make($data , [
+            'username'=>'required',
+            'password'=>'required'
+        ]);
+
+        if ($validator->fails()) {
+            return $this->response->bad_request($validator->errors()->all());
+        }
+
+        $result = $this->users->userAuthenticate($data);
+
+        if($result){
+            return $this->response->success($result);
+        } else {
+            return $this->response->application_error('Unable to process request');
+        }
+
+    }
+
+    public function checkusername(){
+
+        $data = $this->request->all();
+
+        $validator = Validator::make($data , [
+            'username'=>'required',
+        ]);
+
+        if ($validator->fails()) {
+            return $this->response->bad_request($validator->errors()->all());
+        }
+
+        $result = $this->users->checkusername($data);
+
+        if($result){
+            return $this->response->success($result);
+        } else {
+            return $this->response->not_found('Not Found');
+        }
+
+    }
+
+    public function checkemail(){
+
+        $data = $this->request->all();
+
+        $validator = Validator::make($data , [
+            'email'=>'required',
+        ]);
+
+        if ($validator->fails()) {
+            return $this->response->bad_request($validator->errors()->all());
+        }
+
+        $result = $this->users->checkemail($data);
+
+        if($result){
+            return $this->response->success($result);
+        } else {
+            return $this->response->not_found('Not Found');
+        }
+
+    }
+
+
 }

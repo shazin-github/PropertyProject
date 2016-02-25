@@ -79,15 +79,55 @@ class PropertySqlHandler{
 
     public function SearchWithPrice($data){
 
+        $result = '';
 
-        $result = DB::table('property')
-            ->join('features' , 'property.id' , '=', 'features.property_id' )
-            ->join('location', 'property.loc_id','=', 'location.id')
-            ->select('property.*','features.*','location.*')
-            ->whereBetween('price', [$data['min'], $data['max']])
-            ->get();
+        if(!$data['min'] && $data['max']  )
+        {
 
+            $result = DB::table('property')
+                ->join('features' , 'property.id' , '=', 'features.property_id' )
+                ->join('location', 'property.loc_id','=', 'location.id')
+                ->select('property.*','features.*','location.*')
+                ->whereBetween('price', [0, $data['max']])
+                ->get();
+        }
 
+        if($data['min'] && !$data['max'])
+        {
+
+            $result = DB::table('property')
+                ->join('features' , 'property.id' , '=', 'features.property_id' )
+                ->join('location', 'property.loc_id','=', 'location.id')
+                ->select('property.*','features.*','location.*')
+                ->where('price','>=' ,$data['min'])
+                ->get();
+        }
+
+        if( !$data['min'] && !$data['max'] )
+        {
+
+            $result = DB::table('property')
+                ->join('features' , 'property.id' , '=', 'features.property_id' )
+                ->join('location', 'property.loc_id','=', 'location.id')
+                ->select('property.*','features.*','location.*')
+                ->get();
+        }else{
+            if($data['min']<$data['max']){
+                $result = DB::table('property')
+                    ->join('features' , 'property.id' , '=', 'features.property_id' )
+                    ->join('location', 'property.loc_id','=', 'location.id')
+                    ->select('property.*','features.*','location.*')
+                    ->whereBetween('price', [$data['min'], $data['max']])
+                    ->get();
+            }else {
+                $result = DB::table('property')
+                    ->join('features', 'property.id', '=', 'features.property_id')
+                    ->join('location', 'property.loc_id', '=', 'location.id')
+                    ->select('property.*', 'features.*', 'location.*')
+                    ->whereBetween('price', [$data['max'], $data['min']])
+                    ->get();
+            }
+        }
 
         if($result){
 
