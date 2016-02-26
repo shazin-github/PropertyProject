@@ -37,9 +37,9 @@ class BuyerSqlHandler{
 
     public function ShowBuyerbyuser_Id($data){
 
-        $result[] = DB::table('buyer')->where('user_id', $data['user_id'])->get();
+        $result = DB::table('buyer')->where('user_id', $data['user_id'])->get();
 
-        if(!empty($result))
+        if($result)
 
             return $result;
 

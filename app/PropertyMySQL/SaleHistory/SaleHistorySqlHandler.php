@@ -21,7 +21,7 @@ class SaleHistorySqlHandler{
 
     public function ShowByid($data){
 
-        $result = DB::table('sold_history')->where('id', $data['id'])->get();
+        $result[] = DB::table('sold_history')->where('id', $data['id'])->get();
         if($result)
             return $result;
         else
@@ -32,7 +32,7 @@ class SaleHistorySqlHandler{
     public function ShowbyPropertyId($data){
 
 
-        $result = DB::table('sold_history')->where('property_id', $data['property_id'])->get();
+        $result[] = DB::table('sold_history')->where('property_id', $data['property_id'])->get();
         if($result)
             return $result;
         else
@@ -43,7 +43,7 @@ class SaleHistorySqlHandler{
     public function ShowbybuyerId($data){
 
 
-        $result = DB::table('sold_history')->where('buyer_id', $data['buyer_id'])->get();
+        $result[] = DB::table('sold_history')->where('buyer_id', $data['buyer_id'])->get();
         if($result)
             return $result;
         else
@@ -54,7 +54,7 @@ class SaleHistorySqlHandler{
     public function ShowSellerbysellerId($data){
 
 
-        $result = DB::table('sold_history')->where('seller_id', $data['seller_id'])->get();
+        $result[] = DB::table('sold_history')->where('seller_id', $data['seller_id'])->get();
         if($result)
             return $result;
         else

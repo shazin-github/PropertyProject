@@ -44,17 +44,7 @@ class LocationSqlHandler{
 
         $result =  (array) $res;
 
-        $status = $result['status'] ;
-
-        if($status == 1) {
-
-            $result['status'] = 0;
-
-        }else {
-
-            $result['status'] = 1;
-
-        }
+        $result['status'] = 0;
 
         $result['updated_at'] = date('Y-m-d', strtotime('now'));
 

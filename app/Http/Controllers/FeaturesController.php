@@ -151,6 +151,8 @@ class FeaturesController extends Controller{
 
         $data = $this->request->all();
 
+
+
         $validator = Validator::make($data,[
 
             'id' => 'required'

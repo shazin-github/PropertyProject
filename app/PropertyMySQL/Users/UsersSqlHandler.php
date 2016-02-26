@@ -9,8 +9,12 @@ class UsersSqlHandler{
 	public function addUser($data){
 		$data['created_at'] = date('Y-m-d', strtotime('now'));
 		$data['loc_id'] = 1;
+
+
 		//$data['password'] = \Hash::make($data['password']);
 		$id = DB::table('users')->insertGetId($data);
+
+
 		if($id)
 			return $id;
 		else

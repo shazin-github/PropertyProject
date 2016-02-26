@@ -60,7 +60,7 @@ class LocationController extends Controller{
 
         } else {
 
-            return $this->response->application_error('Unable to process request');
+            return $this->response->application_error('Fields are missing or check field spell ');
 
         }
     }
@@ -89,7 +89,7 @@ class LocationController extends Controller{
 
         } else {
 
-            return $this->response->application_error('Unable to process request');
+            return $this->response->not_found('Requested data not Updated or Not avalible');
 
         }
     }
@@ -118,7 +118,7 @@ class LocationController extends Controller{
 
         } else {
 
-            return $this->response->application_error('Unable to process request');
+            return $this->response->not_found('Requested Data Not found');
 
         }
     }
@@ -148,7 +148,7 @@ class LocationController extends Controller{
 
         } else {
 
-            return $this->response->application_error('Unable to process request');
+            return $this->response->not_found();
 
         }
     }

@@ -30,8 +30,6 @@ class Location{
         DB::beginTransaction();
         try{
             $id = $this->LocationSqlHandler->addlocation($data);
-            if(!$id)
-                throw new \Exception('Location not inserted in SQL');
 
             DB::commit();
             return $id;
@@ -51,8 +49,6 @@ class Location{
 
 
             var_dump($result);
-            if(!$result)
-                throw new \Exception('Location not updated in SQL');
 
 
             DB::commit();
@@ -69,11 +65,6 @@ class Location{
             $resultfromSQL  = $this->LocationSqlHandler->ShowLocationbyId($data);
 
 
-
-            if(!$resultfromSQL)
-
-                throw new \Exception('Location not found in SQL');
-
             return $resultfromSQL;
 
         } catch (\Exception $e) {
@@ -89,12 +80,7 @@ class Location{
         try{
 
             $result = $this->LocationSqlHandler->DisabledById($id);
-
-            if(!$result){
-
-                throw new \Exception('Recort Not Updated in SQL');
-            }
-
+            DB::commit();
             return $result;
 
         }catch(\Exception $e) {

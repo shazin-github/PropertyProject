@@ -16,6 +16,7 @@ class Users{
 	}
 	
 	public function addUser($data){
+		//dd($data);
 		DB::beginTransaction();
 		try{
 			$id = $this->UsersSqlHandler->addUser($data);
@@ -33,14 +34,6 @@ class Users{
 		try{
 			$result = $this->UsersSqlHandler->updateUser($data);
 			var_dump($result);
-			if(!$result)
-				throw new \Exception('User not updated in SQL');
-//			$data['user_id'] = intval($data['id']);
-//			unset($data['id']);
-//			$mongoResult = $this->UsersMongoHandler->updateUser($data);
-//			if(!$mongoResult)
-//				throw new \Exception('User not updated in Mongo');
-			
 			DB::commit();
 			return $result;
 		} catch(\Exception $e){

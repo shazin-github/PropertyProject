@@ -19,7 +19,7 @@ class SellerSqlHandler{
 
     public function ShowSellerbyId($data){
 
-        $result = DB::table('seller')->where('id', $data['id'])->get();
+        $result[] = DB::table('seller')->where('id', $data['id'])->get();
         if($result)
             return $result;
         else

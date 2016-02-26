@@ -34,7 +34,7 @@ class UsersController extends Controller{
     public function addUser() {
         $data = $this->request->all();
 
-
+        //dd($data);
         $validator = Validator::make($data,[
             'username' => 'required',
             'email' => 'required',
@@ -237,11 +237,9 @@ class UsersController extends Controller{
 
         $result = $this->users->userAuthenticate($data);
 
-        if($result){
+
             return $this->response->success($result);
-        } else {
-            return $this->response->application_error('Unable to process request');
-        }
+
 
     }
 
