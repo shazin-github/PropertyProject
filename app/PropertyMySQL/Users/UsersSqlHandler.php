@@ -36,7 +36,7 @@ class UsersSqlHandler{
 
 
 		$result = DB::table('users')
-			->where('username' , $data['username'])
+			->where('email' , $data['email'])
 			->where('password' , $data['password'])
 			->get();
 
@@ -52,12 +52,11 @@ class UsersSqlHandler{
 
 		$result = DB::table('users')
 			->where('email' , $data['email'])
-
 			->get();
 
 
 		if($result)
-			return $result;
+			return true;
 		else
 			return false;
 
@@ -68,12 +67,11 @@ class UsersSqlHandler{
 
 		$result = DB::table('users')
 			->where('username' , $data['username'])
-
 			->get();
 
 
 		if($result)
-			return $result;
+			return true;
 		else
 			return false;
 
