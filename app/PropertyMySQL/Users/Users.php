@@ -56,6 +56,8 @@ class Users{
 
 	public function checkemail($data){
 
+
+
 		$result = $this->UsersSqlHandler->checkemail($data);
 
 		if($result)

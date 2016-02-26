@@ -41,6 +41,7 @@ class UsersController extends Controller{
             'firstname'=>'required'
         ]);
 
+
         if ($validator->fails()) {
             return $this->response->bad_request($validator->errors()->all());
         }
@@ -52,7 +53,7 @@ class UsersController extends Controller{
         //dd($checkemail);
         if(!$checkemail){
 
-            $result = $this->users->updateUser($data);
+            $result = $this->users->addUser($data);
 
             if($result){
                 return $this->response->success($result);
