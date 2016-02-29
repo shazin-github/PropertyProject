@@ -259,6 +259,8 @@ class UsersController extends Controller{
         $result = $this->users->userAuthenticate($data);
 
         if($result){
+
+
             return $this->response->success($result);
         }else{
             return $this->response->success($result);
@@ -306,7 +308,7 @@ class UsersController extends Controller{
         $result = $this->users->checkemail($data);
 
         if($result){
-            return $this->response->success($result);
+            return $this->response->success( $result );
         } else {
             return $this->response->not_found('Not Found');
         }

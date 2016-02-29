@@ -41,10 +41,9 @@ class UsersSqlHandler{
 			->where('password' , $data['password'])
 			->get();
 
-
 		if($result) {
-			$result['response'] = true;
-			return $result;
+
+			return $result[0];
 		}
 		else
 			return false;

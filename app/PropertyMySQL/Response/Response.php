@@ -48,12 +48,12 @@
 		 * @param  array  $data Data to return on success
 		 * @return HTTP Response       returns data with 200, OR, 404 if found nothing
 		 */
-		public function success($data = [], $type = "success"){
-			if(!is_array($data))	$data = [$data];
+		public function success($data, $type = "success"){
 			if($data){
 				return http::json(
 					[
-						$type => $data,
+						$type => true,
+						'data' => $data,
 						"status_code" => code::HTTP_OK
 					],
 					code::HTTP_OK

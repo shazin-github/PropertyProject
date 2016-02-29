@@ -10,7 +10,7 @@ Route::group(['prefix' => 'v1'], function(){
 	Route::put('user', "UsersController@updateUser"); //for update
 	Route::get('user', "UsersController@showUser"); //for select
 
-	Route::post('user/userAuthenticate' , "UsersController@userAuthenticate");
+	Route::get('user/userAuthenticate' , "UsersController@userAuthenticate");
 	Route::get('user/checkemail',"UsersController@checkemail");
 
 	//Route::get('user/checkemail',"UsersController@checkemail");
