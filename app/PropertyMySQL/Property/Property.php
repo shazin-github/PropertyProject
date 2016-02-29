@@ -54,17 +54,9 @@ class Property{
 
     public function SearchByID($data){
 
+        $result = $this->PropertySqlHandler->SearchByID($data);
+        return $result;
 
-
-        try{
-            $result = $this->PropertySqlHandler->SearchByID($data);
-
-
-            return $result;
-        } catch(\Exception $e){
-            DB::rollback();
-            var_dump($e);
-        }
 
     }
 

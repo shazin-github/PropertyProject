@@ -36,6 +36,7 @@ class UsersSqlHandler{
 
 
 		$result = DB::table('users')
+			->select('users.id as user_id')
 			->where('email' , $data['email'])
 			->where('password' , $data['password'])
 			->get();

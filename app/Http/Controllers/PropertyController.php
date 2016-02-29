@@ -73,6 +73,19 @@ class PropertyController extends Controller{
 
         $data = $this->request->all();
 
+
+        switch ($data['update']){
+            case 'location':
+
+
+
+                break;
+            case 'feature':
+                break;
+            case 'property':
+                break;
+        }
+
         $validator = Validator::make($data,[
 
             'id'    => 'required',
@@ -110,6 +123,8 @@ class PropertyController extends Controller{
 
             'id'    => 'required',
         ]);
+
+        //return $data;
 
         if ($validator->fails()) {
 

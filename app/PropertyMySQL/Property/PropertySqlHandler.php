@@ -39,7 +39,7 @@ class PropertySqlHandler{
         $result = DB::table('property')
             ->join('features' , 'property.id' , '=', 'features.property_id' )
             ->join('location', 'property.loc_id','=', 'location.id')
-            ->select('property.*','features.*','location.*')
+            ->select('*')
             ->where('property.id',$data['id'])
             ->get();
 

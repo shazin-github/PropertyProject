@@ -67,7 +67,7 @@ Route::group(['prefix' => 'v1'], function(){
 	//property Api Route
 
 	Route::post('property', "PropertyController@addproperty");//add
-	Route::put('property/by-id' , "PropertyController@updatebyID");//update by id
+	Route::get('property/by-id' , "PropertyController@updatebyID");//update by id
 	//update location
 	Route::get('property/SearchById',"PropertyController@SearchByID");//search by id
 	Route::get('property/SearchByStreet',"PropertyController@SearchByStreet");//search by street

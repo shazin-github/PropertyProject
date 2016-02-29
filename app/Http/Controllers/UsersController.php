@@ -67,13 +67,13 @@ class UsersController extends Controller{
 
         }
 
-        $result = $this->users->addUser($data);
-        
-        if($result){
-            return $this->response->success($result);
-        } else {
-            return $this->response->application_error('Unable to process request');
-        }
+//        $result = $this->users->addUser($data);
+//
+//        if($result){
+//            return $this->response->success($result);
+//        } else {
+//            return $this->response->application_error('Unable to process request');
+//        }
     }
 
     public function updateUser() {
