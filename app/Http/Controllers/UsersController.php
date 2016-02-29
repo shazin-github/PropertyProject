@@ -86,12 +86,8 @@ class UsersController extends Controller{
             return $this->response->bad_request($validator->errors()->all());
         }
         $result = $this->users->updateUser($data);
-        
-        if($result){
-            return $this->response->success($result);
-        } else {
-            return $this->response->application_error('Unable to process request');
-        }
+
+        return $this->response->success($result);
     }
 
     public function addLocation() {
