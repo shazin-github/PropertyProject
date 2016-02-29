@@ -12,17 +12,28 @@ use App\PropertyMySQL\Users\Users;
 
 use App\PropertyMySQL\Property\Property;
 
+use App\PropertyMySQL\Location\Location;
+use App\PropertyMySQL\Features\Features;
+
+use App\PropertyMySQL\Seller\Seller;
+
 class PropertyController extends Controller{
     protected $request;
     protected $response;
     protected $users;
     protected $property;
+    protected $location;
+    protected $feature;
+    protected $seller;
 
-    public function __construct(Request $request, Response $response, Users $users,Property $property ){
+    public function __construct(Request $request, Response $response, Users $users,Property $property , Location $location , Features $feature , Seller $seller ){
         $this->request = $request;
         $this->response = $response;
         $this->users = $users;
         $this->property = $property;
+        $this->location = $location;
+        $this->feature  = $feature;
+        $this->seller = $seller;
     }
 
 
@@ -32,26 +43,27 @@ class PropertyController extends Controller{
 
         $data = $this->request->all();
 
-        $validator = Validator::make($data,[
-            'loc_id'    => 'required',
-            'street'    => 'required',
-            'purpose'   =>'required',
-            'type'      =>'required',
-            'category'  =>'required',
-            'area'      =>'required',
-            'price'     =>'required'
+        $loc = $data['location'];
 
+        $pro = $data['property'];
 
-        ]);
+        $fea = $data['feature'];
 
-        if ($validator->fails()) {
+        $loc_id = $this->location->addLocation($loc);
 
-            return $this->response->bad_request($validator->errors()->all());
+        $pro['loc_id'] = $loc_id;
 
-        }
+        $pro_id = $this->property->addproperty($pro);
 
+        $fea['property_id'] = $pro_id;
 
-        $result = $this->property->addproperty($data);
+        $res = $this->feature->addFeature($fea);
+
+        $sel['user_id'] = $data['seller'];
+
+        $sel['property_id'] = $pro_id;
+
+        $result = $this->seller->addSeller($sel);
 
 
 
