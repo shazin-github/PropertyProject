@@ -87,7 +87,11 @@ class UsersController extends Controller{
         }
         $result = $this->users->updateUser($data);
 
-        return $this->response->success($result);
+        if($result){
+            return $this->response->success($result);
+        } else {
+            return $this->response->not_found('No Record Found');
+        }
     }
 
     public function addLocation() {
