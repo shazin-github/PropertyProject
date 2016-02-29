@@ -8,10 +8,12 @@ Route::group(['prefix' => 'v1'], function(){
 	//User Api Route
 	Route::post('user', "UsersController@addUser"); //for insert
 	Route::put('user', "UsersController@updateUser"); //for update
-	//Route::get('user', "UsersController@showUser"); //for select
+	Route::get('user', "UsersController@showUser"); //for select
 
 	Route::post('user/userAuthenticate' , "UsersController@userAuthenticate");
 	Route::get('user/checkemail',"UsersController@checkemail");
+
+	//Route::get('user/checkemail',"UsersController@checkemail");
 
 	Route::get('user/checkusername',"UsersController@checkusername");
 

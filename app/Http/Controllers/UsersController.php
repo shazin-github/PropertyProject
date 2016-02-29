@@ -258,8 +258,13 @@ class UsersController extends Controller{
 
         $result = $this->users->userAuthenticate($data);
 
-
+        if($result){
             return $this->response->success($result);
+        }else{
+            return $this->response->success($result);
+        }
+
+
 
 
     }
@@ -306,6 +311,27 @@ class UsersController extends Controller{
             return $this->response->not_found('Not Found');
         }
 
+    }
+
+    public function showUser(){
+
+        $data = $this->request->all();
+
+        $validator = Validator::make($data , [
+            'id'=>'required',
+        ]);
+
+        if ($validator->fails()) {
+            return $this->response->bad_request($validator->errors()->all());
+        }
+
+        $result = $this->users->showUser($data);
+
+        if($result){
+            return $this->response->success($result);
+        } else {
+            return $this->response->not_found('Not Found');
+        }
     }
 
 

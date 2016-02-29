@@ -42,8 +42,10 @@ class UsersSqlHandler{
 			->get();
 
 
-		if($result)
+		if($result) {
+			$result['response'] = true;
 			return $result;
+		}
 		else
 			return false;
 
@@ -76,6 +78,20 @@ class UsersSqlHandler{
 		else
 			return false;
 
+
+	}
+
+	public function showUser($data){
+
+		$result = DB::table('users')
+			->where('id' , $data['id'])
+			->get();
+
+
+		if($result)
+			return $result;
+		else
+			return false;
 
 	}
 }

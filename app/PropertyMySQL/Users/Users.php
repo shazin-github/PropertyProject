@@ -47,9 +47,12 @@ class Users{
 		$result = $this->UsersSqlHandler->userAuthenticate($data);
 
 
-		if($result)
+		if($result){
 			return $result;
+		}
+
 		else{
+
 			return false;
 		}
 	}
@@ -74,6 +77,18 @@ class Users{
 
 		if($result)
 			return true;
+		else{
+			return false;
+		}
+
+	}
+
+	public  function showUser($data){
+
+		$result = $this->UsersSqlHandler->showUser($data);
+
+		if($result)
+			return $result;
 		else{
 			return false;
 		}
