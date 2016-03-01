@@ -245,7 +245,13 @@ class PropertyController extends Controller{
 
         $result = $this->property->livesearch($data);
 
-        return $result;
+        if($result){
+
+            return $this->response->success($result);
+        }else{
+
+            return $this->response->not_found('Not Found');
+        }
 
     }
 

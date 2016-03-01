@@ -162,18 +162,57 @@ class PropertySqlHandler{
     public  function  livesearch($data){
 
 
-
-        //$purpose = $data['purpose'];
         $longitude = $data['longitude'];
+
         $latitude = $data['latitude'];
-        //$bed = $data['bed'];
-        //$bath = $data['bath'];
+
+        $purpose = $data['purpose'];
+
+        $sql_purpose = '';
+
+        if($purpose != null){
+
+            $sql_purpose = "And property.purpose like '$purpose'";
+
+        }else{
+
+            $sql_purpose = "And ( property.purpose like 'rent' OR property.purpose like 'sale' )";
+
+        }
+
+
+        $bed = $data['bedroom'];
+
+        if($bed != null){
+
+            $sql_bed = " and features.bedrooms = $bed";
+
+        }else{
+
+            $sql_bed = "And features.bedrooms > 0";
+
+        }
+
+        $bath = $data['bathroom'];
+
+        if($bath != null){
+
+            $sql_bath = "And features.bathrooms = $bath";
+
+        }else{
+
+            $sql_bath = "And features.bathrooms > 0";
+
+        }
+
+
+
+        $loc_ids = '';
 
         if($latitude != null && $longitude != null){
-//SELECT ROUND(6371 * acos(cos(radians('lat')) * cos(radians(latitude))
-// * cos(radians(longitude) - radians('long')) + sin(radians('lat'))
-// * sin(radians(latitude)))) as distance,latitude,longitude, from your_table HAVING distance<=20  order by distance
+
             //dd('test');
+
             $results = DB::select( DB::raw("SELECT
                                               id, ROUND(
                                                 6371 * acos (
@@ -192,8 +231,30 @@ class PropertySqlHandler{
                 'long'=> $longitude,
             ]);
 
-            dd($results);
+          foreach($results as $res){
+
+                $loc_ids[] = $res->id;
+
+            }
+
         }
+
+        $loc_id = implode(',', $loc_ids);
+
+        $properties = DB::select(
+            DB::raw("select property.* , features.* , location.* from property
+                    INNER JOIN features on property.id=features.property_id $sql_bath $sql_bed
+                    INNER JOIN location on property.loc_id= location.id
+                    WHERE property.loc_id IN ($loc_id) $sql_purpose ")
+//            ,[
+//                //'SQLBED'=> $loc_id,
+//                //'bed' =>$bed,
+//                //'bathrooms'=> $bath,
+//                'purpose'=>$purpose,
+//            ]
+        );
+
+        return $properties;
 
     }
 
