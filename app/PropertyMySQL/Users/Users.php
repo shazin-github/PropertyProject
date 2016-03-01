@@ -33,7 +33,6 @@ class Users{
 		DB::beginTransaction();
 		try{
 			$result = $this->UsersSqlHandler->updateUser($data);
-			var_dump($result);
 			DB::commit();
 			return $result;
 		} catch(\Exception $e){

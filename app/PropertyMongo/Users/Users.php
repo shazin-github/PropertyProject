@@ -38,7 +38,7 @@ class Users{
 		DB::beginTransaction();
 		try{
 			$result = $this->UsersSqlHandler->updateUser($data);
-			var_dump($result);
+			
 			if(!$result)
 				throw new \Exception('User not updated in SQL');
 			$data['user_id'] = intval($data['id']);
