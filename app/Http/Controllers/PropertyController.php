@@ -39,6 +39,7 @@ class PropertyController extends Controller{
 
 
     //Before Adding Property We Will Add PropertyLocation First Then Add Property.
+
     public function addproperty(){
 
         $data = $this->request->all();
@@ -87,9 +88,8 @@ class PropertyController extends Controller{
 
 
         switch ($data['update']){
+
             case 'location':
-
-
 
                 break;
             case 'feature':
@@ -223,6 +223,31 @@ class PropertyController extends Controller{
 
     }
 
+    public function showproperty(){
+
+        $result = $this->property->showproperty();
+
+        if($result){
+
+            return $this->response->success($result);
+        }else{
+
+            return $this->response->application_error('Server error');
+        }
+
+    }
+
+    public function livesearch(){
+
+        $data = $this->request->all();
+
+        //dd($data);
+
+        $result = $this->property->livesearch($data);
+
+        return $result;
+
+    }
 
 
 }

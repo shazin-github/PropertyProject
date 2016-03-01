@@ -69,14 +69,17 @@ Route::group(['prefix' => 'v1'], function(){
 	//property Api Route
 
 	Route::post('property', "PropertyController@addproperty");//add
-	Route::get('property/by-id' , "PropertyController@updatebyID");//update by id
+	Route::put('property/by-id' , "PropertyController@updatebyID");//update by id
 	//update location
+	Route::get('property' , "PropertyController@showproperty");
 	Route::get('property/SearchById',"PropertyController@SearchByID");//search by id
 	Route::get('property/SearchByStreet',"PropertyController@SearchByStreet");//search by street
 	Route::get('property/SearchWithPrice',"PropertyController@SearchWithPrice");//search between two price
 
 	Route::get('property/SearchWithMaxPrice' , "PropertyController@SearchWithMaxPrice");
 	Route::get('property/SearchWithMinPrice' , "PropertyController@SearchWithMinPrice");
+
+	Route::get('property/livesearch',"PropertyController@livesearch");
 
 	//search by utility
 	Route::get('property/SearchWithPropertyPurpose',"PropertyController@SearchWithPropertyPurpose");//search by purpose

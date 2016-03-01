@@ -87,4 +87,21 @@ class Property{
 
     }
 
+    public function showproperty(){
+
+
+            $result = $this->PropertySqlHandler->showproperty();
+
+            return $result;
+
+
+    }
+
+    public function livesearch($data){
+
+        $result = $this->PropertySqlHandler->livesearch($data);
+
+        return $result;
+    }
+
 }

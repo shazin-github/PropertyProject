@@ -138,5 +138,63 @@ class PropertySqlHandler{
         }
 
     }
+    public function showproperty(){
+
+        $result = DB::table('property')
+            ->join('features' , 'property.id' , '=', 'features.property_id' )
+            ->join('location', 'property.loc_id','=', 'location.id')
+            ->select('property.*','features.*','location.*')
+            ->where('property.status',1)
+            ->get();
+
+
+
+        if($result){
+
+            return $result;
+        }else{
+
+            return false;
+        }
+
+    }
+
+    public  function  livesearch($data){
+
+
+
+        //$purpose = $data['purpose'];
+        $longitude = $data['longitude'];
+        $latitude = $data['latitude'];
+        //$bed = $data['bed'];
+        //$bath = $data['bath'];
+
+        if($latitude != null && $longitude != null){
+//SELECT ROUND(6371 * acos(cos(radians('lat')) * cos(radians(latitude))
+// * cos(radians(longitude) - radians('long')) + sin(radians('lat'))
+// * sin(radians(latitude)))) as distance,latitude,longitude, from your_table HAVING distance<=20  order by distance
+            //dd('test');
+            $results = DB::select( DB::raw("SELECT
+                                              id, ROUND(
+                                                6371 * acos (
+                                                  cos ( radians(:lat) )
+                                                  * cos( radians( latitude ) )
+                                                  * cos( radians( longitude ) - radians(:long) )
+                                                  + sin ( radians(:lat1) )
+                                                  * sin( radians( latitude ) )
+                                                )
+                                              ) AS distance
+                                            FROM location
+                                            HAVING distance < 30
+                                            ORDER BY distance"), [
+                'lat' => $latitude,
+                'lat1' => $latitude,
+                'long'=> $longitude,
+            ]);
+
+            dd($results);
+        }
+
+    }
 
 }

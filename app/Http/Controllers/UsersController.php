@@ -34,7 +34,7 @@ class UsersController extends Controller{
     public function addUser() {
         $data = $this->request->all();
 
-        //dd($data);
+
         $validator = Validator::make($data,[
             'email' => 'required',
             'password' => 'required',
@@ -50,7 +50,7 @@ class UsersController extends Controller{
 
         $checkemail = $this->users->checkemail($data);
 
-        //dd($checkemail);
+
         if(!$checkemail){
 
             $result = $this->users->addUser($data);
@@ -67,13 +67,6 @@ class UsersController extends Controller{
 
         }
 
-//        $result = $this->users->addUser($data);
-//
-//        if($result){
-//            return $this->response->success($result);
-//        } else {
-//            return $this->response->application_error('Unable to process request');
-//        }
     }
 
     public function updateUser() {
@@ -260,10 +253,9 @@ class UsersController extends Controller{
 
         if($result){
 
-
             return $this->response->success($result);
         }else{
-            return $this->response->success($result);
+            return $this->response->not_found("Not Found");
         }
 
 
