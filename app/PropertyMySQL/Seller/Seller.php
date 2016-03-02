@@ -20,7 +20,6 @@ class Seller{
         try{
             $result = $this->SellerSqlHandler->addSeller ($data);
 
-            var_dump($result);
 
             DB::commit();
             return $result;

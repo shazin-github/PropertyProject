@@ -27,8 +27,6 @@ class Features{
         try{
             $result = $this->FeaturesSqlHandler->addFeature($data);
 
-            var_dump($result);
-
             DB::commit();
             return $result;
         } catch(\Exception $e){
@@ -43,8 +41,6 @@ class Features{
         try{
             $result = $this->FeaturesSqlHandler->updatefeaturebyPropertyId($data);
 
-
-            var_dump($result);
             if(!$result)
                 $this->response->not_found();
 

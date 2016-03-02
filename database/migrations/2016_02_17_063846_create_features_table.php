@@ -21,8 +21,6 @@ class CreateFeaturesTable extends Migration
             $table->integer('bedrooms')->index();
             $table->integer('bathrooms')->index();
             $table->text('utilities');
-            $table->text('description');
-            $table->text('other');
             $table->timestamps();
         });
 

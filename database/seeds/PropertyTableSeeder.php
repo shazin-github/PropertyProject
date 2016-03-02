@@ -20,7 +20,7 @@ class PropertyTableSeeder extends Seeder
         $limit = 30;
         $locations = Location::all()->pluck('id')->toArray();
         for ($i = 0; $i < $limit; $i++) {
-            $street = $faker->streetName;
+            $title = $faker->streetSuffix;
             $price = $faker->randomNumber(3);
             $area = $faker->randomNumber(5);
             $status = 1;
@@ -28,11 +28,12 @@ class PropertyTableSeeder extends Seeder
             $purpose = $faker->randomElement(array('rent', 'sale'));
             $type = $faker->randomElement(array('house', 'apartment', 'open-house'));
             $category = $faker->randomElement(array('family', 'single-person', 'events'));
+            $image_url = $faker->imageUrl('640', '480', 'city', true, 'Faker');
             $loc_id = $faker->randomElement($locations);
 
             // Insert In MySQL
             $property = Property::create([
-                'street' => $street,
+                'title' => $title,
                 'price' => $price,
                 'area' => $area,
                 'status' => $status,
@@ -40,13 +41,14 @@ class PropertyTableSeeder extends Seeder
                 'purpose' => $purpose,
                 'type' => $type,
                 'category' => $category,
+                'image_url' => $image_url,
                 'loc_id' => $loc_id,
             ]);
 
             // Insert In Mongo
             $propertyMongo = PropertyMongo::create([
                 '_id' => $property->id,
-                'street' => $street,
+                'title' => $title,
                 'price' => $price,
                 'area' => $area,
                 'status' => $status,
@@ -54,7 +56,8 @@ class PropertyTableSeeder extends Seeder
                 'purpose' => $purpose,
                 'type' => $type,
                 'category' => $category,
-                'loc_id' => $loc_id,
+                'image_url' => $image_url,
+                'loc_id' => $loc_id
             ]);
         }
     }
