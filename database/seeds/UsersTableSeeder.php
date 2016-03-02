@@ -26,6 +26,7 @@ class UsersTableSeeder extends Seeder
             $email = $faker->safeEmail;
             $password = $faker->password;
             $phone = $faker->phoneNumber;
+            $image_url = $faker->imageUrl('640', '480', 'people', true, 'Faker');
             $loc_id = $faker->randomElement($locations);
 
             // Insert In MySQL
@@ -36,6 +37,7 @@ class UsersTableSeeder extends Seeder
                 'email' => $email,
                 'password' => $password,
                 'phone' => $phone,
+                'image_url' => $image_url,
                 'loc_id' => $loc_id,
             ]);
 
@@ -48,6 +50,7 @@ class UsersTableSeeder extends Seeder
                 'email' => $email,
                 'password' => $password,
                 'phone' => $phone,
+                'image_url' => $image_url,
                 'loc_id' => $loc_id,
             ]);
         }

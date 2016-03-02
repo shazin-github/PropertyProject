@@ -20,11 +20,12 @@ class Seller{
         try{
             $result = $this->SellerSqlHandler->addSeller ($data);
 
+
             DB::commit();
             return $result;
         } catch(\Exception $e){
             DB::rollback();
-
+            var_dump($e);
         }
     }
 
@@ -37,7 +38,7 @@ class Seller{
 
         } catch (\Exception $e) {
 
-
+            var_dump($e);
 
         }
     }
@@ -51,7 +52,7 @@ class Seller{
 
         } catch (\Exception $e) {
 
-
+            var_dump($e);
 
         }
 
@@ -66,7 +67,7 @@ class Seller{
 
         } catch (\Exception $e) {
 
-
+            var_dump($e);
 
         }
 

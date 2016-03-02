@@ -18,13 +18,14 @@ class CreatePropertyTable extends Migration
 
             $table->increments('id');
             $table->integer('loc_id')->unsigned();
-            $table->string('street', 100);
+            $table->string('title', 100);
             $table->float('price');
             $table->float('area');
             $table->text('description');
             $table->string('purpose')->index();
             $table->string('type')->index();
             $table->string('category')->index();
+            $table->text('image_url');
             $table->tinyInteger('status');
             $table->timestamps();
         });

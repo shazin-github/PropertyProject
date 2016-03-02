@@ -25,14 +25,15 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique()->index();
             $table->string('password', 60);
             $table->string('phone');
+            $table->text('image_url');
             $table->tinyInteger('status');
             $table->rememberToken();
             $table->timestamps();
         });
 
-        Schema::connection('mysql')->table('users', function($table) {
+        /*Schema::connection('mysql')->table('users', function($table) {
                 $table->foreign('loc_id')->references('id')->on('location');
-        });
+        });*/
 
         //Create In Mongo
         Schema::connection('mongoDB')->create('users', function (Blueprint $table) {

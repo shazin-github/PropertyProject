@@ -166,7 +166,7 @@ class PropertySqlHandler{
 
         $latitude = $data['latitude'];
 
-        $purpose = strtolower($data['purpose']);
+        $purpose = (isset($data['purpose']) && !empty($data['purpose'])) ? strtolower($data['purpose']) : null;
 
         $sql_purpose = '';
 
@@ -181,7 +181,7 @@ class PropertySqlHandler{
         }
 
 
-        $bed = $data['bedroom'];
+        $bed = (isset($data['bedroom']) && !empty($data['bedroom'])) ? $data['bedroom'] : null;
 
         if($bed != null){
 
@@ -193,7 +193,7 @@ class PropertySqlHandler{
 
         }
 
-        $bath = $data['bathroom'];
+        $bath = (isset($data['bathroom']) && !empty($data['bathroom'])) ? $data['bathroom']: null;
 
         if($bath != null){
 
@@ -238,8 +238,6 @@ class PropertySqlHandler{
             }
 
         }
-
-        //dd($loc_ids);
 
         $loc_id = implode(',', $loc_ids);
 

@@ -23,8 +23,6 @@ class FeaturesTableSeeder extends Seeder
             $bedrooms = $faker->randomNumber(1);
             $bathrooms = $faker->randomNumber(1);
             $utilities = $faker->paragraph;
-            $description = $faker->paragraph;
-            $other = $faker->paragraph;
             $property_id = $properties[$i];
 
             // Insert In MySQL
@@ -32,8 +30,6 @@ class FeaturesTableSeeder extends Seeder
                 'bedrooms' => $bedrooms,
                 'bathrooms' => $bathrooms,
                 'utilities' => $utilities,
-                'description' => $description,
-                'other' => $other,
                 'property_id' => $property_id,
             ]);
 
@@ -43,8 +39,6 @@ class FeaturesTableSeeder extends Seeder
                 'bedrooms' => $bedrooms,
                 'bathrooms' => $bathrooms,
                 'utilities' => $utilities,
-                'description' => $description,
-                'other' => $other,
                 'property_id' => $property_id,
             ]);
         }
