@@ -25,7 +25,7 @@ class Users{
 			return $id;
 		} catch(\Exception $e){
 			DB::rollback();
-			var_dump($e);
+
 		}
 	}
 
@@ -37,7 +37,7 @@ class Users{
 			return $result;
 		} catch(\Exception $e){
 			DB::rollback();
-			var_dump($e);
+
 		}
 	}
 

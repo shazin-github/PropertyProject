@@ -35,7 +35,7 @@ class Location{
             return $id;
         } catch(\Exception $e){
             DB::rollback();
-            var_dump($e);
+
         }
 
 
@@ -48,7 +48,7 @@ class Location{
             $result = $this->LocationSqlHandler->updateLocation($data);
 
 
-            var_dump($result);
+
 
 
             DB::commit();
@@ -68,7 +68,7 @@ class Location{
             return $resultfromSQL;
 
         } catch (\Exception $e) {
-            var_dump($e);
+
         }
 
     }
@@ -87,7 +87,7 @@ class Location{
 
             DB::rollback();
 
-            var_dump($e);
+
         }
     }
 

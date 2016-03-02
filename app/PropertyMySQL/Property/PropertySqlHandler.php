@@ -166,7 +166,7 @@ class PropertySqlHandler{
 
         $latitude = $data['latitude'];
 
-        $purpose = $data['purpose'];
+        $purpose = strtolower($data['purpose']);
 
         $sql_purpose = '';
 
@@ -238,6 +238,8 @@ class PropertySqlHandler{
             }
 
         }
+
+        //dd($loc_ids);
 
         $loc_id = implode(',', $loc_ids);
 

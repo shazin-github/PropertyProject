@@ -44,6 +44,22 @@ class PropertyController extends Controller{
 
         $data = $this->request->all();
 
+        $validator = Validator::make($data,[
+
+            'location'    => 'required',
+            'property'    => 'required',
+            'feature'    => 'required',
+            'seller'    => 'required',
+        ]);
+
+        //return $data;
+
+        if ($validator->fails()) {
+
+            return $this->response->bad_request($validator->errors()->all());
+
+        }
+
         $loc = $data['location'];
 
         $pro = $data['property'];
@@ -58,6 +74,8 @@ class PropertyController extends Controller{
 
         $fea['property_id'] = $pro_id;
 
+        $fea['utilities'] = json_encode($fea['utilities']);
+
         $res = $this->feature->addFeature($fea);
 
         $sel['user_id'] = $data['seller'];
@@ -65,8 +83,6 @@ class PropertyController extends Controller{
         $sel['property_id'] = $pro_id;
 
         $result = $this->seller->addSeller($sel);
-
-
 
         if($result){
 
@@ -87,20 +103,16 @@ class PropertyController extends Controller{
         $data = $this->request->all();
 
 
-        switch ($data['update']){
+        $loc = $data['location'];
 
-            case 'location':
+        $pro = $data['property'];
 
-                break;
-            case 'feature':
-                break;
-            case 'property':
-                break;
-        }
+        $fea = $data['feature'];
 
         $validator = Validator::make($data,[
 
             'id'    => 'required',
+
         ]);
 
         if ($validator->fails()) {
@@ -232,7 +244,7 @@ class PropertyController extends Controller{
             return $this->response->success($result);
         }else{
 
-            return $this->response->application_error('Server error');
+            return $this->response->not_found('No Result Found');
         }
 
     }

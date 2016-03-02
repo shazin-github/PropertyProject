@@ -24,7 +24,7 @@ class SaleHistory{
             return $result;
         } catch(\Exception $e){
             DB::rollback();
-            var_dump($e);
+
         }
     }
 
@@ -37,7 +37,7 @@ class SaleHistory{
             return $resultfromSQL;
 
         } catch (\Exception $e) {
-            var_dump($e);
+
         }
 
     }
@@ -51,7 +51,7 @@ class SaleHistory{
             return $resultfromSQL;
 
         } catch (\Exception $e) {
-            var_dump($e);
+
         }
 
     }
@@ -65,7 +65,7 @@ class SaleHistory{
             return $resultfromSQL;
 
         } catch (\Exception $e) {
-            var_dump($e);
+
         }
 
     }
@@ -79,7 +79,7 @@ class SaleHistory{
             return $resultfromSQL;
 
         } catch (\Exception $e) {
-            var_dump($e);
+
         }
 
     }

@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f968cd95-e743-437e-acbc-94aa16ab890a" name="Default" comment="user Auth Updata">
+    <list default="true" id="f968cd95-e743-437e-acbc-94aa16ab890a" name="Default" comment="Property Search End Points">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/PropertyController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/PropertyController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/UsersController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/UsersController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PropertyMySQL/Buyer/Buyer.php" afterPath="$PROJECT_DIR$/app/PropertyMySQL/Buyer/Buyer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PropertyMySQL/Features/Features.php" afterPath="$PROJECT_DIR$/app/PropertyMySQL/Features/Features.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PropertyMySQL/Location/Location.php" afterPath="$PROJECT_DIR$/app/PropertyMySQL/Location/Location.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PropertyMySQL/Property/Property.php" afterPath="$PROJECT_DIR$/app/PropertyMySQL/Property/Property.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PropertyMySQL/Property/PropertySqlHandler.php" afterPath="$PROJECT_DIR$/app/PropertyMySQL/Property/PropertySqlHandler.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PropertyMySQL/SaleHistory/SaleHistory.php" afterPath="$PROJECT_DIR$/app/PropertyMySQL/SaleHistory/SaleHistory.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PropertyMySQL/Seller/Seller.php" afterPath="$PROJECT_DIR$/app/PropertyMySQL/Seller/Seller.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PropertyMySQL/Users/Users.php" afterPath="$PROJECT_DIR$/app/PropertyMySQL/Users/Users.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PropertyMySQL/Users/UsersSqlHandler.php" afterPath="$PROJECT_DIR$/app/PropertyMySQL/Users/UsersSqlHandler.php" />
     </list>
     <ignored path="PropertyProject-master.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,63 +37,21 @@
       <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.54717">
-              <caret line="81" column="70" selection-start-line="81" selection-start-column="70" selection-end-line="81" selection-end-column="70" />
+            <state vertical-scroll-proportion="-5.230769">
+              <caret line="8" column="46" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PropertyController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PropertyController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PropertyController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-25.346153">
-              <caret line="243" column="10" selection-start-line="243" selection-start-column="10" selection-end-line="243" selection-end-column="10" />
+            <state vertical-scroll-proportion="0.39756367">
+              <caret line="244" column="14" selection-start-line="244" selection-start-column="14" selection-end-line="244" selection-end-column="14" />
               <folding>
                 <element signature="e#39#67#0#PHP" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Property.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/PropertyMySQL/Property/Property.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-29.26923">
-              <caret line="101" column="63" selection-start-line="101" selection-start-column="63" selection-end-line="101" selection-end-column="63" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PropertySqlHandler.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/PropertyMySQL/Property/PropertySqlHandler.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-18.153847">
-              <caret line="146" column="40" selection-start-line="146" selection-start-column="40" selection-end-line="146" selection-end-column="40" />
-              <folding>
-                <marker date="1456817226021" expanded="true" signature="4873:5695" placeholder="SELECT id, (... location" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Users.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/PropertyMongo/Users/Users.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Users.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/PropertyMySQL/Users/Users.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.59096175">
-              <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -105,16 +68,11 @@
         <option value="$PROJECT_DIR$/app/Api/Location/LocationMongoHandler.php" />
         <option value="$PROJECT_DIR$/app/Api/Location/Location.php" />
         <option value="$PROJECT_DIR$/app/PropertyMySQL/Users/Keys.php" />
-        <option value="$PROJECT_DIR$/app/PropertyMySQL/Seller/Seller.php" />
-        <option value="$PROJECT_DIR$/app/PropertyMySQL/Buyer/Buyer.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/SaleHistoryController.php" />
-        <option value="$PROJECT_DIR$/app/PropertyMySQL/SaleHistory/SaleHistory.php" />
-        <option value="$PROJECT_DIR$/app/PropertyMySQL/Features/Features.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_02_17_063846_create_features_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_02_17_063826_create_property_table.php" />
         <option value="$PROJECT_DIR$/app/User.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/LocationController.php" />
-        <option value="$PROJECT_DIR$/app/PropertyMySQL/Location/Location.php" />
         <option value="$PROJECT_DIR$/app/PropertyMySQL/Location/LocationSqlHandler.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/BuyerController.php" />
         <option value="$PROJECT_DIR$/app/PropertyMySQL/Buyer/BuyerSqlHandler.php" />
@@ -123,14 +81,19 @@
         <option value="$PROJECT_DIR$/app/PropertyMySQL/SaleHistory/SaleHistorySqlHandler.php" />
         <option value="$PROJECT_DIR$/app/PropertyMySQL/Features/FeaturesSqlHandler.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/FeaturesController.php" />
-        <option value="$PROJECT_DIR$/app/PropertyMySQL/Users/Users.php" />
-        <option value="$PROJECT_DIR$/app/PropertyMySQL/Users/UsersSqlHandler.php" />
         <option value="$PROJECT_DIR$/app/PropertyMySQL/Response/Response.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/UsersController.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
-        <option value="$PROJECT_DIR$/app/PropertyMySQL/Property/Property.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/PropertyController.php" />
+        <option value="$PROJECT_DIR$/app/PropertyMySQL/Users/UsersSqlHandler.php" />
         <option value="$PROJECT_DIR$/app/PropertyMySQL/Property/PropertySqlHandler.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/PropertyController.php" />
+        <option value="$PROJECT_DIR$/app/PropertyMySQL/Features/Features.php" />
+        <option value="$PROJECT_DIR$/app/PropertyMySQL/Seller/Seller.php" />
+        <option value="$PROJECT_DIR$/app/PropertyMySQL/Property/Property.php" />
+        <option value="$PROJECT_DIR$/app/PropertyMySQL/Users/Users.php" />
+        <option value="$PROJECT_DIR$/app/PropertyMySQL/Location/Location.php" />
+        <option value="$PROJECT_DIR$/app/PropertyMySQL/Buyer/Buyer.php" />
+        <option value="$PROJECT_DIR$/app/PropertyMySQL/SaleHistory/SaleHistory.php" />
       </list>
     </option>
   </component>
@@ -144,10 +107,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
+    <option name="x" value="1672" />
     <option name="y" value="-8" />
     <option name="width" value="1696" />
-    <option name="height" value="1026" />
+    <option name="height" value="1066" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -225,26 +188,8 @@
               <option name="myItemId" value="PropertyMySQL" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="PropertyProject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PropertyProject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PropertyMySQL" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Property" />
+              <option name="myItemId" value="Users" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -266,7 +211,25 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Location" />
+              <option name="myItemId" value="Seller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PropertyProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PropertyProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PropertyMySQL" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -474,16 +437,28 @@
       <option name="project" value="LOCAL" />
       <updated>1456746968944</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="get property">
+      <created>1456817817149</created>
+      <option name="number" value="00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1456817817149</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Property Search End Points">
+      <created>1456826406960</created>
+      <option name="number" value="00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1456826406960</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
+    <frame x="1672" y="-8" width="1696" height="1066" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293348" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32824427" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -529,7 +504,9 @@
     <MESSAGE value="User End Point Updated" />
     <MESSAGE value="user Auth Updata" />
     <MESSAGE value="add Property end Point" />
-    <option name="LAST_COMMIT_MESSAGE" value="add Property end Point" />
+    <MESSAGE value="get property" />
+    <MESSAGE value="Property Search End Points" />
+    <option name="LAST_COMMIT_MESSAGE" value="Property Search End Points" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -721,24 +698,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/PropertyMySQL/Buyer/Buyer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-23.615385">
-          <caret line="66" column="67" selection-start-line="66" selection-start-column="67" selection-end-line="66" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/PropertyMySQL/Buyer/BuyerSqlHandler.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-25.576923">
           <caret line="41" column="19" selection-start-line="41" selection-start-column="19" selection-end-line="41" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/PropertyMySQL/Seller/Seller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.538462">
-          <caret line="49" column="67" selection-start-line="49" selection-start-column="67" selection-end-line="49" selection-end-column="67" />
         </state>
       </provider>
     </entry>
@@ -756,13 +719,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/PropertyMySQL/SaleHistory/SaleHistory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.65384614">
-          <caret line="34" column="65" selection-start-line="34" selection-start-column="65" selection-end-line="34" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/PropertyMySQL/SaleHistory/SaleHistorySqlHandler.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.0">
@@ -774,13 +730,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.1483942">
           <caret line="70" column="29" selection-start-line="70" selection-start-column="21" selection-end-line="70" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/PropertyMySQL/Features/Features.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.538462">
-          <caret line="89" column="67" selection-start-line="89" selection-start-column="67" selection-end-line="89" selection-end-column="67" />
         </state>
       </provider>
     </entry>
@@ -805,17 +754,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="26" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/PropertyMySQL/Response/Response.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-14.384615">
           <caret line="54" column="38" selection-start-line="54" selection-start-column="38" selection-end-line="54" selection-end-column="38" />
+          <folding>
+            <element signature="e#73#110#0#PHP" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -826,13 +771,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/PropertyMySQL/Location/Location.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37984496">
-          <caret line="31" column="51" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/LocationController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33222592">
@@ -840,70 +778,139 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/PropertyMySQL/Users/UsersSqlHandler.php">
+    <entry file="file://$PROJECT_DIR$/app/PropertyMongo/Users/Users.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.384615">
-          <caret line="32" column="20" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
-          <folding />
+        <state vertical-scroll-proportion="0.55156434">
+          <caret line="34" column="5" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UsersController.php">
+    <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.09849363">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.54717">
-          <caret line="81" column="70" selection-start-line="81" selection-start-column="70" selection-end-line="81" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PropertyController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-25.346153">
-          <caret line="243" column="10" selection-start-line="243" selection-start-column="10" selection-end-line="243" selection-end-column="10" />
-          <folding>
-            <element signature="e#39#67#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/PropertyMySQL/Property/Property.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-29.26923">
-          <caret line="101" column="63" selection-start-line="101" selection-start-column="63" selection-end-line="101" selection-end-column="63" />
+        <state vertical-scroll-proportion="0.55455565">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/PropertyMySQL/Property/PropertySqlHandler.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.153847">
-          <caret line="146" column="40" selection-start-line="146" selection-start-column="40" selection-end-line="146" selection-end-column="40" />
+        <state vertical-scroll-proportion="-17.73077">
+          <caret line="242" column="0" selection-start-line="242" selection-start-column="0" selection-end-line="242" selection-end-column="0" />
           <folding>
-            <marker date="1456817226021" expanded="true" signature="4873:5695" placeholder="SELECT id, (... location" />
+            <marker date="1456909173078" expanded="true" signature="5248:6070" placeholder="SELECT id, (... location" />
+            <marker date="1456909173078" expanded="true" signature="6430:6700" placeholder="select prope... property" />
+            <marker date="1456909173078" expanded="true" signature="6430:6701" placeholder="select prope... property" />
+            <marker date="1456909173078" expanded="true" signature="6430:6708" placeholder="select pro.*... location" />
+            <marker date="1456909173078" expanded="true" signature="6430:6709" placeholder="select prope... property" />
+            <marker date="1456909173078" expanded="true" signature="6430:6710" placeholder="select prope... property" />
+            <marker date="1456909173078" expanded="true" signature="6430:6723" placeholder="select prope... property" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/PropertyMongo/Users/Users.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="-5.230769">
+          <caret line="8" column="46" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/PropertyMySQL/Users/UsersSqlHandler.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-21.0">
+          <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/PropertyMySQL/Property/Property.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.5249169">
+          <caret line="84" column="12" selection-start-line="84" selection-start-column="12" selection-end-line="84" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UsersController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4330011">
+          <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding>
+            <element signature="e#436#686#0#PHP" expanded="false" />
+            <element signature="e#1509#2016#0#PHP" expanded="false" />
+            <element signature="e#2022#2566#0#PHP" expanded="false" />
+            <element signature="e#2572#3116#0#PHP" expanded="false" />
+            <element signature="e#3122#3670#0#PHP" expanded="false" />
+            <element signature="e#3676#4220#0#PHP" expanded="false" />
+            <element signature="e#4226#4805#0#PHP" expanded="false" />
+            <element signature="e#4811#5355#0#PHP" expanded="false" />
+            <element signature="e#5361#5941#0#PHP" expanded="false" />
+            <element signature="e#5947#6487#0#PHP" expanded="false" />
+            <element signature="e#6493#7053#0#PHP" expanded="false" />
+            <element signature="e#7059#7576#0#PHP" expanded="false" />
+            <element signature="e#7582#8092#0#PHP" expanded="false" />
+            <element signature="e#8098#8598#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/PropertyMySQL/Location/Location.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.5625693">
+          <caret line="89" column="12" selection-start-line="89" selection-start-column="12" selection-end-line="89" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/PropertyMySQL/Features/Features.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.4473975">
+          <caret line="135" column="0" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/PropertyMySQL/Buyer/Buyer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.79291254">
+          <caret line="72" column="12" selection-start-line="72" selection-start-column="12" selection-end-line="72" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/PropertyMySQL/Users/Users.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.59096175">
-          <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.60465115">
+          <caret line="80" column="9" selection-start-line="80" selection-start-column="9" selection-end-line="80" selection-end-column="9" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/PropertyMySQL/Seller/Seller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7552602">
+          <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/PropertyMySQL/SaleHistory/SaleHistory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7552602">
+          <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PropertyController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.39756367">
+          <caret line="244" column="14" selection-start-line="244" selection-start-column="14" selection-end-line="244" selection-end-column="14" />
+          <folding>
+            <element signature="e#39#67#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -86,7 +86,6 @@ class UsersSqlHandler{
 			->where('id' , $data['id'])
 			->get();
 
-
 		if($result)
 			return $result;
 		else

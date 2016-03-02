@@ -27,13 +27,11 @@ class Features{
         try{
             $result = $this->FeaturesSqlHandler->addFeature($data);
 
-            var_dump($result);
-
             DB::commit();
             return $result;
         } catch(\Exception $e){
             DB::rollback();
-            var_dump($e);
+
         }
     }
 
@@ -44,7 +42,7 @@ class Features{
             $result = $this->FeaturesSqlHandler->updatefeaturebyPropertyId($data);
 
 
-            var_dump($result);
+
             if(!$result)
                 $this->response->not_found();
 
@@ -52,7 +50,7 @@ class Features{
             return $result;
         } catch(\Exception $e){
             DB::rollback();
-            var_dump($e);
+
         }
     }
 
@@ -67,7 +65,7 @@ class Features{
             return $result;
         } catch(\Exception $e){
             DB::rollback();
-            var_dump($e);
+
         }
     }
 
@@ -79,7 +77,7 @@ class Features{
             return $resultfromSQL;
 
         } catch (\Exception $e) {
-            var_dump($e);
+
         }
 
     }
@@ -92,7 +90,7 @@ class Features{
             return $resultfromSQL;
 
         } catch (\Exception $e) {
-            var_dump($e);
+
         }
 
     }
@@ -106,7 +104,7 @@ class Features{
             return $result;
         }catch(\Exception $e){
 
-            var_dump($e);
+
         }
 
     }
@@ -120,7 +118,7 @@ class Features{
             return $result;
         }catch(\Exception $e){
 
-            var_dump($e);
+
         }
 
     }
@@ -135,7 +133,7 @@ class Features{
             return $result;
         }catch(\Exception $e){
 
-            var_dump($e);
+
         }
 
     }

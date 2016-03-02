@@ -29,7 +29,7 @@ class Property{
             return $id;
         } catch(\Exception $e){
             DB::rollback();
-            var_dump($e);
+
         }
 
 
@@ -47,7 +47,7 @@ class Property{
             return $id;
         } catch(\Exception $e){
             DB::rollback();
-            var_dump($e);
+
         }
 
     }
@@ -69,7 +69,7 @@ class Property{
             return $result;
         } catch(\Exception $e){
             DB::rollback();
-            var_dump($e);
+
         }
 
     }
@@ -82,7 +82,7 @@ class Property{
             return $result;
         } catch(\Exception $e){
             DB::rollback();
-            var_dump($e);
+
         }
 
     }
