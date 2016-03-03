@@ -85,6 +85,7 @@ Route::group(['prefix' => 'v1'], function(){
 	Route::get('property/SearchWithPropertyPurpose',"PropertyController@SearchWithPropertyPurpose");//search by purpose
 	Route::get('property/SearchWithPropertyType',"PropertyController@SearchWithPropertyType");//search by type
 	Route::get('property/SearchWithPropertycategory',"PropertyController@SearchWithPropertyCategory");//search by category
+	Route::get('property/SearchWithUser',"PropertyController@SearchWithUser");
 	Route::delete('property',"PropertyController@HideProperty");   //delete or disabled by changing status
 	Route::get('property/SearchWithSatatus',"PropertyController@SearchWithStatus");//search by status
 	Route::get('property/SearchLike' , "PropertyController@SearchLike");//Group Search

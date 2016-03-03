@@ -87,6 +87,15 @@ class Property{
 
     }
 
+    public function SearchWithUser($data){
+        try{
+            $result = $this->PropertySqlHandler->SearchWithUser($data);
+            return $result;
+        } catch(\Exception $e){
+            DB::rollback();
+        }
+    }
+
     public function showproperty(){
 
 

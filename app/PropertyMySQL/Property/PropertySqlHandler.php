@@ -76,7 +76,23 @@ class PropertySqlHandler{
 
 
     }
+    
+    public function SearchWithUser($data){
 
+        $result = DB::table('seller')
+            ->join('property' , 'property.id' , '=', 'seller.property_id' )
+            ->join('features' , 'features.property_id' , '=', 'seller.property_id' )
+            ->join('location' , 'location.id' , '=', 'property.loc_id' )
+            ->where('seller.user_id', $data['user_id'])
+            ->get();
+        
+        if($result){
+            return $result;
+        }else{
+            return false;
+        }
+
+    }
     public function SearchWithPrice($data){
 
         $result = '';
