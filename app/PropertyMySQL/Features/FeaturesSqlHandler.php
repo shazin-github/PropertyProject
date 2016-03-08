@@ -44,7 +44,7 @@ class FeaturesSqlHandler{
 
     public function ShowFeaturebyProperty_Id($data){
 
-        $result[] = DB::table('features')->where('id', $data['id'])->get();
+        $result[] = DB::table('features')->where('property_id', $data['property_id'])->get();
         if($result)
             return $result;
         else
