@@ -55,13 +55,13 @@ class PropertySqlHandler{
 
     }
 
-    public function SearchByStreet($data){
+    public function SearchByCity($data){
 
         $result = DB::table('property')
             ->join('features' , 'property.id' , '=', 'features.property_id' )
             ->join('location', 'property.loc_id','=', 'location.id')
             ->select('property.*','features.*','location.*')
-            ->where('property.street',$data['street'])
+            ->where('location.city',$data['city'])
             ->get();
 
 

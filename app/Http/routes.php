@@ -73,7 +73,7 @@ Route::group(['prefix' => 'v1'], function(){
 	//update location
 	Route::get('property' , "PropertyController@showproperty");
 	Route::get('property/SearchById',"PropertyController@SearchByID");//search by id
-	Route::get('property/SearchByStreet',"PropertyController@SearchByStreet");//search by street
+	Route::get('property/SearchByCity',"PropertyController@SearchByCity");//search by street
 	Route::get('property/SearchWithPrice',"PropertyController@SearchWithPrice");//search between two price
 
 	Route::get('property/SearchWithMaxPrice' , "PropertyController@SearchWithMaxPrice");

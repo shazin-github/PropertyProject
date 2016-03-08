@@ -60,10 +60,10 @@ class Property{
 
     }
 
-    public function SearchByStreet($data){
+    public function SearchByCity($data){
 
         try{
-            $result = $this->PropertySqlHandler->SearchByStreet($data);
+            $result = $this->PropertySqlHandler->SearchByCity($data);
 
 
             return $result;

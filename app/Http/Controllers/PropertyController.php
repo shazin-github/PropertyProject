@@ -170,7 +170,7 @@ class PropertyController extends Controller{
 
     }
 
-    public function SearchByStreet(){
+    public function SearchByCity(){
 
         $data = $this->request->all();
 
@@ -178,7 +178,7 @@ class PropertyController extends Controller{
 
         $validator = Validator::make($data,[
 
-            'street'    => 'required',
+            'city'    => 'required',
         ]);
 
         if ($validator->fails()) {
@@ -187,7 +187,7 @@ class PropertyController extends Controller{
 
         }
 
-        $result = $this->property->SearchByStreet($data);
+        $result = $this->property->SearchByCity($data);
 
         if($result){
 
