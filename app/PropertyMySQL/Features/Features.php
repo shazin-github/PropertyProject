@@ -83,7 +83,7 @@ class Features{
     public function ShowFeaturebyId($data){
 
         try{
-            $resultfromSQL  = $this->FeaturesSqlHandler->ShowFeaturebyProperty_Id($data);
+            $resultfromSQL  = $this->FeaturesSqlHandler->ShowFeaturebyId($data);
 
             return $resultfromSQL;
 
