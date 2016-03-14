@@ -287,5 +287,18 @@ class PropertyController extends Controller{
 
     }
 
+    public function ShowRecent(){
+
+        $result = $this->property->ShowRecent();
+
+        if($result){
+
+            return $this->response->success($result);
+        }else{
+
+            return $this->response->not_found('Not Recent Property Found');
+        }
+    }
+
 
 }

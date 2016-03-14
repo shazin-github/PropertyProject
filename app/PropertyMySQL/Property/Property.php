@@ -113,4 +113,12 @@ class Property{
         return $result;
     }
 
+    public function ShowRecent(){
+
+        $result = $this->PropertySqlHandler->ShowRecent();
+
+        return $result;
+
+    }
+
 }

@@ -255,6 +255,8 @@ class PropertySqlHandler{
 
         }
 
+        dd($loc_ids);
+
         $loc_id = implode(',', $loc_ids);
 
         $properties = DB::select(
@@ -271,6 +273,29 @@ class PropertySqlHandler{
         );
 
         return $properties;
+
+    }
+
+    public function ShowRecent(){
+
+        $result = DB::table('property')
+            ->join('features' , 'property.id' , '=', 'features.property_id' )
+            ->join('location', 'property.loc_id','=', 'location.id')
+            ->select('property.*','features.*','location.*')
+            ->where('property.status',1)
+            ->orderBy('property.created_at', 'desc')
+            ->take(10)
+            ->get();
+
+
+
+        if($result){
+
+            return $result;
+        }else{
+
+            return false;
+        }
 
     }
 
