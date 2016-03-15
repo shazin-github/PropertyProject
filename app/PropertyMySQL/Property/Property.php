@@ -121,4 +121,12 @@ class Property{
 
     }
 
+    public function ShowMostViewed(){
+
+        $result = $this->PropertySqlHandler->ShowMostViewed();
+
+        return $result;
+
+    }
+
 }

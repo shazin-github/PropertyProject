@@ -298,4 +298,27 @@ class PropertySqlHandler{
 
     }
 
+
+    public function ShowMostViewed(){
+
+        $result = DB::table('property')
+            ->join('features' , 'property.id' , '=', 'features.property_id' )
+            ->join('location', 'property.loc_id','=', 'location.id')
+            ->select('property.*','features.*','location.*')
+            ->where('property.status',1)
+            ->orderBy('property.views', 'desc')
+            ->take(8)
+            ->get();
+
+
+        if($result){
+
+            return $result;
+        }else{
+
+            return false;
+        }
+
+    }
+
 }
