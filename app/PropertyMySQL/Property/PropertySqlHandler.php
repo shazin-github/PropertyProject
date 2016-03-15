@@ -284,9 +284,8 @@ class PropertySqlHandler{
             ->select('property.*','features.*','location.*')
             ->where('property.status',1)
             ->orderBy('property.created_at', 'desc')
-            ->take(8)
+            ->take(4)
             ->get();
-
 
 
         if($result){
