@@ -129,4 +129,12 @@ class Property{
 
     }
 
+    public function updateviews($data){
+
+        $result = $this->PropertySqlHandler->updateviews($data);
+
+        return $result;
+
+    }
+
 }

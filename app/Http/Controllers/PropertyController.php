@@ -313,5 +313,29 @@ class PropertyController extends Controller{
         }
     }
 
+    public function updateviews(){
+
+        $data = $this->request->all();
+
+        $validator = Validator::make($data,[
+            'id'    => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return $this->response->bad_request($validator->errors()->all());
+        }
+
+        $result = $this->property->updateviews($data);
+
+        if($result){
+
+            return $this->response->success($result);
+        }else{
+
+            return $this->response->not_found('Not Found');
+        }
+
+    }
+
 
 }

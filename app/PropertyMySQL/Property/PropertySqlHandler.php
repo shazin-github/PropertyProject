@@ -319,4 +319,20 @@ class PropertySqlHandler{
 
     }
 
+    public function updateviews($data){
+
+        $result = DB::table('property')
+            ->where('id',$data['id'])
+            ->increment('views');
+
+        if($result){
+
+            return $result;
+        }else{
+
+            return false;
+        }
+
+    }
+
 }

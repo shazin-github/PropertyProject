@@ -85,6 +85,8 @@ Route::group(['prefix' => 'v1'], function(){
 
 	Route::get('property/ShowWithMostViews', "PropertyController@ShowMostViewed");
 
+	Route::put('property/updateviews' , "PropertyController@updateviews");
+
 	//search by utility
 	Route::get('property/SearchWithPropertyPurpose',"PropertyController@SearchWithPropertyPurpose");//search by purpose
 	Route::get('property/SearchWithPropertyType',"PropertyController@SearchWithPropertyType");//search by type
