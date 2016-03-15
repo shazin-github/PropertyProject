@@ -22,14 +22,14 @@ class FeaturesTableSeeder extends Seeder
         for ($i = 0; $i < $limit; $i++) {
             $bedrooms = $faker->randomNumber(1);
             $bathrooms = $faker->randomNumber(1);
-            $utilities = $faker->paragraph;
+            $utilities = ['parking' => $faker->boolean(), 'ac' => $faker->boolean(), 'swim' => $faker->boolean(), 'balcony' => $faker->boolean()];
             $property_id = $properties[$i];
 
             // Insert In MySQL
             $feature = Features::create([
                 'bedrooms' => $bedrooms,
                 'bathrooms' => $bathrooms,
-                'utilities' => $utilities,
+                'utilities' => json_encode($utilities),
                 'property_id' => $property_id,
             ]);
 
@@ -38,7 +38,7 @@ class FeaturesTableSeeder extends Seeder
                 '_id' => $feature->id,
                 'bedrooms' => $bedrooms,
                 'bathrooms' => $bathrooms,
-                'utilities' => $utilities,
+                'utilities' => json_encode($utilities),
                 'property_id' => $property_id,
             ]);
         }

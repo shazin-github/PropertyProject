@@ -26,6 +26,7 @@ class CreatePropertyTable extends Migration
             $table->string('type')->index();
             $table->string('category')->index();
             $table->text('image_url');
+            $table->integer('views');
             $table->tinyInteger('status');
             $table->timestamps();
         });
