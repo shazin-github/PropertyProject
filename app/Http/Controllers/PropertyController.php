@@ -286,7 +286,6 @@ class PropertyController extends Controller{
         }
 
     }
-
     public function SearchWithMaxPrice(){
         $data = $this->request->all();
 
@@ -307,6 +306,46 @@ class PropertyController extends Controller{
 
         $result = $this->property->SearchWithMaxPrice($data);
 
+    public function ShowRecent(){
+
+        $result = $this->property->ShowRecent();
+
+        if($result){
+
+            return $this->response->success($result);
+        }else{
+
+            return $this->response->not_found('Not Recent Property Found');
+        }
+    }
+
+    public function ShowMostViewed(){
+
+        $result = $this->property->ShowMostViewed();
+
+        if($result){
+
+            return $this->response->success($result);
+        }else{
+
+            return $this->response->not_found('Not Property Found');
+        }
+    }
+
+    public function updateviews(){
+
+        $data = $this->request->all();
+
+        $validator = Validator::make($data,[
+            'id'    => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return $this->response->bad_request($validator->errors()->all());
+        }
+
+        $result = $this->property->updateviews($data);
+
         if($result){
 
             return $this->response->success($result);
@@ -316,6 +355,12 @@ class PropertyController extends Controller{
             return $this->response->not_found("Requested Data not found");
 
         }
+    }
+        }else{
+
+            return $this->response->not_found('Not Found');
+        }
+
     }
 
     public function SearchWithMinPrice(){

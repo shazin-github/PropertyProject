@@ -275,10 +275,8 @@ class PropertySqlHandler{
     }
 
     public function SearchWithMaxPrice($data){
+
         $result = DB::table('property')
-            ->join('features' , 'property.id' , '=', 'features.property_id' )
-            ->join('location', 'property.loc_id','=', 'location.id')
-            ->select('property.*','features.*','location.*')
             ->where('price','<=', $data['max'])
             ->get();
         
@@ -289,11 +287,31 @@ class PropertySqlHandler{
         }
     }
 
-    public function SearchWithMinPrice($data){
+    public function ShowRecent(){
+
         $result = DB::table('property')
             ->join('features' , 'property.id' , '=', 'features.property_id' )
             ->join('location', 'property.loc_id','=', 'location.id')
             ->select('property.*','features.*','location.*')
+            ->where('property.status',1)
+            ->orderBy('property.created_at', 'desc')
+            ->take(4)
+            ->get();
+
+
+        if($result){
+
+            return $result;
+        }else{
+
+            return false;
+        }
+
+    }
+
+    public function SearchWithMinPrice($data){
+
+        $result = DB::table('property')
             ->where('price','>=', $data['min'])
             ->get();
         
@@ -302,6 +320,46 @@ class PropertySqlHandler{
         }else{
             return false;
         }
+        
+
+
+    public function ShowMostViewed(){
+
+        $result = DB::table('property')
+            ->join('features' , 'property.id' , '=', 'features.property_id' )
+            ->join('location', 'property.loc_id','=', 'location.id')
+            ->select('property.*','features.*','location.*')
+            ->where('property.status',1)
+            ->orderBy('property.views', 'desc')
+            ->take(8)
+            ->get();
+
+
+        if($result){
+
+            return $result;
+        }else{
+
+            return false;
+        }
+
+    }
+
+    public function updateviews($data){
+
+        $result = DB::table('property')
+            ->where('id',$data['id'])
+            ->increment('views');
+
+        if($result){
+
+            return $result;
+        }else{
+
+            return false;
+        }
+
+
     }
 
 }

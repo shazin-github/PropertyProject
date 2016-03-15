@@ -142,6 +142,27 @@ class Property{
             DB::rollback();
 
         }
+    public function ShowRecent(){
+
+        $result = $this->PropertySqlHandler->ShowRecent();
+
+        return $result;
+
+    }
+
+    public function ShowMostViewed(){
+
+        $result = $this->PropertySqlHandler->ShowMostViewed();
+
+        return $result;
+
+    }
+
+    public function updateviews($data){
+
+        $result = $this->PropertySqlHandler->updateviews($data);
+
+        return $result;
 
     }
 

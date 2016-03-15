@@ -51,6 +51,7 @@ class UsersController extends Controller{
         $checkemail = $this->users->checkemail($data);
 
 
+
         if(!$checkemail){
 
             $result = $this->users->addUser($data);
