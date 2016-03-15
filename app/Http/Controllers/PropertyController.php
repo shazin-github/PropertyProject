@@ -287,5 +287,65 @@ class PropertyController extends Controller{
 
     }
 
+    public function SearchWithMaxPrice(){
+        $data = $this->request->all();
 
+
+
+        $validator = Validator::make($data,[
+
+            'max'    => 'required'
+
+        ]);
+
+        if ($validator->fails()) {
+
+            return $this->response->bad_request($validator->errors()->all());
+
+        }
+
+
+        $result = $this->property->SearchWithMaxPrice($data);
+
+        if($result){
+
+            return $this->response->success($result);
+
+        }else{
+
+            return $this->response->not_found("Requested Data not found");
+
+        }
+    }
+
+    public function SearchWithMinPrice(){
+        $data = $this->request->all();
+
+
+
+        $validator = Validator::make($data,[
+
+            'min'    => 'required'
+
+        ]);
+
+        if ($validator->fails()) {
+
+            return $this->response->bad_request($validator->errors()->all());
+
+        }
+
+
+        $result = $this->property->SearchWithMinPrice($data);
+
+        if($result){
+
+            return $this->response->success($result);
+
+        }else{
+
+            return $this->response->not_found("Requested Data not found");
+
+        }
+    }
 }

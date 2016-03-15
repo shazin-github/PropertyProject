@@ -274,4 +274,34 @@ class PropertySqlHandler{
 
     }
 
+    public function SearchWithMaxPrice($data){
+        $result = DB::table('property')
+            ->join('features' , 'property.id' , '=', 'features.property_id' )
+            ->join('location', 'property.loc_id','=', 'location.id')
+            ->select('property.*','features.*','location.*')
+            ->where('price','<=', $data['max'])
+            ->get();
+        
+        if($result){
+            return $result;
+        }else{
+            return false;
+        }
+    }
+
+    public function SearchWithMinPrice($data){
+        $result = DB::table('property')
+            ->join('features' , 'property.id' , '=', 'features.property_id' )
+            ->join('location', 'property.loc_id','=', 'location.id')
+            ->select('property.*','features.*','location.*')
+            ->where('price','>=', $data['min'])
+            ->get();
+        
+        if($result){
+            return $result;
+        }else{
+            return false;
+        }
+    }
+
 }
