@@ -29,6 +29,7 @@ class PropertyTableSeeder extends Seeder
             $type = $faker->randomElement(array('house', 'apartment', 'open-house'));
             $category = $faker->randomElement(array('family', 'single-person', 'events'));
             $image_url = $faker->imageUrl('640', '480', 'city', true, 'Faker');
+            $views = $faker->randomNumber(3);
             $loc_id = $faker->randomElement($locations);
 
             // Insert In MySQL
@@ -42,6 +43,7 @@ class PropertyTableSeeder extends Seeder
                 'type' => $type,
                 'category' => $category,
                 'image_url' => $image_url,
+                'views' => $views,
                 'loc_id' => $loc_id,
             ]);
 
@@ -57,6 +59,7 @@ class PropertyTableSeeder extends Seeder
                 'type' => $type,
                 'category' => $category,
                 'image_url' => $image_url,
+                'views' => $views,
                 'loc_id' => $loc_id
             ]);
         }

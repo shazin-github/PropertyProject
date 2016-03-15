@@ -255,8 +255,6 @@ class PropertySqlHandler{
 
         }
 
-        dd($loc_ids);
-
         $loc_id = implode(',', $loc_ids);
 
         $properties = DB::select(
