@@ -113,6 +113,35 @@ class Property{
         return $result;
     }
 
+    public function SearchWithMaxPrice($data){
+
+        try
+        {
+            $result = $this->PropertySqlHandler->SearchWithMaxPrice($data);
+
+            return $result;
+        }
+        catch(\Exception $e)
+        {
+            DB::rollback();
+
+        }
+
+    }
+
+    public function SearchWithMinPrice($data){
+
+        try
+        {
+            $result = $this->PropertySqlHandler->SearchWithMinPrice($data);
+
+            return $result;
+        }
+        catch(\Exception $e)
+        {
+            DB::rollback();
+
+        }
     public function ShowRecent(){
 
         $result = $this->PropertySqlHandler->ShowRecent();

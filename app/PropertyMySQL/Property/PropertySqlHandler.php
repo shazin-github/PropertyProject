@@ -274,6 +274,19 @@ class PropertySqlHandler{
 
     }
 
+    public function SearchWithMaxPrice($data){
+
+        $result = DB::table('property')
+            ->where('price','<=', $data['max'])
+            ->get();
+        
+        if($result){
+            return $result;
+        }else{
+            return false;
+        }
+    }
+
     public function ShowRecent(){
 
         $result = DB::table('property')
@@ -295,6 +308,19 @@ class PropertySqlHandler{
         }
 
     }
+
+    public function SearchWithMinPrice($data){
+
+        $result = DB::table('property')
+            ->where('price','>=', $data['min'])
+            ->get();
+        
+        if($result){
+            return $result;
+        }else{
+            return false;
+        }
+        
 
 
     public function ShowMostViewed(){
@@ -332,6 +358,7 @@ class PropertySqlHandler{
 
             return false;
         }
+
 
     }
 
