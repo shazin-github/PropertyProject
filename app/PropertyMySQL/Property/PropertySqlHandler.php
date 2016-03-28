@@ -97,7 +97,7 @@ class PropertySqlHandler{
 
         $result = '';
 
-        if(!$data['min'] && $data['max']  )
+        if(!$data['min'] && $data['max']  ) // if only min price is given
         {
 
             $result = DB::table('property')
@@ -108,7 +108,7 @@ class PropertySqlHandler{
                 ->get();
         }
 
-        if($data['min'] && !$data['max'])
+        if($data['min'] && !$data['max']) // if only max price is given
         {
 
             $result = DB::table('property')
@@ -119,7 +119,7 @@ class PropertySqlHandler{
                 ->get();
         }
 
-        if( !$data['min'] && !$data['max'] )
+        if( !$data['min'] && !$data['max'] ) //if both are not given
         {
 
             $result = DB::table('property')
@@ -128,7 +128,7 @@ class PropertySqlHandler{
                 ->select('property.*','features.*','location.*')
                 ->get();
         }else{
-            if($data['min']<$data['max']){
+            if($data['min']<$data['max']){ // if both are given then check either max is smaller then min or not
                 $result = DB::table('property')
                     ->join('features' , 'property.id' , '=', 'features.property_id' )
                     ->join('location', 'property.loc_id','=', 'location.id')

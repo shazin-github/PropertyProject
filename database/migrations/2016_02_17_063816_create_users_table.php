@@ -27,6 +27,7 @@ class CreateUsersTable extends Migration
             $table->string('phone');
             $table->text('image_url');
             $table->tinyInteger('status');
+            $table->string('confirmation_code');
             $table->rememberToken();
             $table->timestamps();
         });

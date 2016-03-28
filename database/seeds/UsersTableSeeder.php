@@ -25,6 +25,7 @@ class UsersTableSeeder extends Seeder
             $lastname = $faker->lastName;
             $email = $faker->safeEmail;
             $password = $faker->password;
+            $confirmation_code = str_random(8);
             $phone = $faker->phoneNumber;
             $image_url = $faker->imageUrl('640', '480', 'people', true, 'Faker');
             $loc_id = $faker->randomElement($locations);
@@ -37,6 +38,7 @@ class UsersTableSeeder extends Seeder
                 'email' => $email,
                 'password' => $password,
                 'phone' => $phone,
+                'confirmation_code' => $confirmation_code,
                 'image_url' => $image_url,
                 'loc_id' => $loc_id,
             ]);

@@ -254,7 +254,13 @@ class UsersController extends Controller{
 
         if($result){
 
-            return $this->response->success($result);
+            if($result->user_id!=-1){
+                return $this->response->success($result);
+            }else{
+                return $this->response->unauthorize("Email Verification Requried");
+            }
+
+
         }else{
             return $this->response->not_found("Not Found");
         }
@@ -327,6 +333,29 @@ class UsersController extends Controller{
         } else {
             return $this->response->not_found('Not Found');
         }
+    }
+    public function confirmCode(){
+
+        $data = $this->request->all();
+
+        $validator = Validator::make($data , [
+            'id' => 'required',
+            'confirmation_code'=>'required',
+
+        ]);
+
+        if ($validator->fails()) {
+            return $this->response->bad_request($validator->errors()->all());
+        }
+
+        $result = $this->users->confirmCode($data);
+
+        if($result){
+            return $this->response->success($result);
+        } else {
+            return $this->response->not_found('Not Found');
+        }
+
     }
 
 

@@ -93,4 +93,14 @@ class Users{
 		}
 
 	}
+	public function confirmCode($data){
+
+		$result = $this->UsersSqlHandler->confirmCode($data);
+
+		if($result)
+			return $result;
+		else{
+			return false;
+		}
+	}
 }

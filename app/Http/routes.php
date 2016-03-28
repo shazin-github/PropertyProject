@@ -17,6 +17,8 @@ Route::group(['prefix' => 'v1'], function(){
 
 	Route::get('user/checkusername',"UsersController@checkusername");
 
+	Route::get('user/confirmCode' , 'UsersController@confirmCode');
+
 
 
 	// Location Api Route
