@@ -286,14 +286,14 @@ class PropertyController extends Controller{
         }
 
     }
-    public function SearchWithMaxPrice(){
+    public function SearchWithMaxPrice()
+    {
         $data = $this->request->all();
 
 
+        $validator = Validator::make($data, [
 
-        $validator = Validator::make($data,[
-
-            'max'    => 'required'
+            'max' => 'required'
 
         ]);
 
@@ -305,6 +305,17 @@ class PropertyController extends Controller{
 
 
         $result = $this->property->SearchWithMaxPrice($data);
+
+        if($result){
+
+            return $this->response->success($result);
+        }else{
+
+            return $this->response->not_found('Not Property Found');
+        }
+
+    }
+
 
     public function ShowRecent(){
 
@@ -356,12 +367,7 @@ class PropertyController extends Controller{
 
         }
     }
-        }else{
 
-            return $this->response->not_found('Not Found');
-        }
-
-    }
 
     public function SearchWithMinPrice(){
         $data = $this->request->all();

@@ -129,19 +129,18 @@ class Property{
 
     }
 
-    public function SearchWithMinPrice($data){
+    public function SearchWithMinPrice($data)
+    {
 
-        try
-        {
+        try {
             $result = $this->PropertySqlHandler->SearchWithMinPrice($data);
 
             return $result;
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             DB::rollback();
 
         }
+    }
     public function ShowRecent(){
 
         $result = $this->PropertySqlHandler->ShowRecent();

@@ -309,19 +309,20 @@ class PropertySqlHandler{
 
     }
 
-    public function SearchWithMinPrice($data){
+    public function SearchWithMinPrice($data)
+    {
 
         $result = DB::table('property')
-            ->where('price','>=', $data['min'])
+            ->where('price', '>=', $data['min'])
             ->get();
-        
-        if($result){
+
+        if ($result) {
             return $result;
-        }else{
+        } else {
             return false;
         }
-        
 
+    }
 
     public function ShowMostViewed(){
 
