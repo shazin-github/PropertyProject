@@ -98,6 +98,16 @@ Route::group(['prefix' => 'v1'], function(){
 	Route::get('property/SearchWithSatatus',"PropertyController@SearchWithStatus");//search by status
 	Route::get('property/SearchLike' , "PropertyController@SearchLike");//Group Search
 
+	//property purpose
+	Route::get('property/getPurposeList' , 'PropertyPurposeController@getPurposeList');
+ 	Route::get('property/getPurposeById' , 'PropertyPurposeController@getPurposeById');
+ 	// property type
+ 	Route::get('property/getTypeList' , 'PropertyTypeController@getTypeList');
+ 	Route::get('property/getTypeById' , 'PropertyTypeController@getTypeById');
+	//property category
+	Route::get('property/getCategoryList' , 'PropertyCategoryController@getCategoryList');
+	Route::get('property/getCategoryById' , 'PropertyCategoryController@getCategoryById');
+
 
 
 });
