@@ -29,9 +29,9 @@ class CreateFeaturesTable extends Migration
         });
 
         //Create In Mongo
-        Schema::connection('mongoDB')->create('features', function (Blueprint $table) {
+        /*Schema::connection('mongoDB')->create('features', function (Blueprint $table) {
 
-        });
+        });*/
     }
 
     /**
@@ -45,6 +45,6 @@ class CreateFeaturesTable extends Migration
         Schema::connection('mysql')->drop('features');
 
         //Drop From Mongo
-        Schema::connection('mongoDB')->drop('features');
+        //Schema::connection('mongoDB')->drop('features');
     }
 }

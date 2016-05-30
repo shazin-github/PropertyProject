@@ -32,11 +32,11 @@ class AgentTableSeeder extends Seeder
             ]);
 
             //Insert In Mongo
-            $agentMongo = AgentMongo::create([
+            /*$agentMongo = AgentMongo::create([
                 '_id' => $agent->id,
                 'property_id' => $property_id,
                 'user_id' => $user_id,
-            ]);
+            ]);*/
         }
     }
 }

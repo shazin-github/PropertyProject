@@ -39,7 +39,7 @@ class LocationTableSeeder extends Seeder
             ]);
 
             // Insert In Mongo
-            $locationMongo = LocationMongo::create([
+            /*$locationMongo = LocationMongo::create([
                 '_id' => $location->id,
                 'address' => $address,
                 'city' => $city,
@@ -48,7 +48,7 @@ class LocationTableSeeder extends Seeder
                 'country' => $country,
                 'latitude' => $latitude,
                 'longitude' => $longitude,
-            ]);
+            ]);*/
         }
     }
 }

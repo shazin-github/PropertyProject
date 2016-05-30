@@ -28,9 +28,9 @@ class CreateSellerTable extends Migration
         });
 
         //Create In Mongo
-        Schema::connection('mongoDB')->create('seller', function (Blueprint $table) {
+        /*Schema::connection('mongoDB')->create('seller', function (Blueprint $table) {
 
-        });
+        });*/
     }
 
     /**
@@ -44,6 +44,6 @@ class CreateSellerTable extends Migration
         Schema::connection('mysql')->drop('seller');
 
         //Drop From Mongo
-        Schema::connection('mongoDB')->drop('seller');
+        //Schema::connection('mongoDB')->drop('seller');
     }
 }

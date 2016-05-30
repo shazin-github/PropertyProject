@@ -37,9 +37,9 @@ class CreateUsersTable extends Migration
         });*/
 
         //Create In Mongo
-        Schema::connection('mongoDB')->create('users', function (Blueprint $table) {
+        /*Schema::connection('mongoDB')->create('users', function (Blueprint $table) {
 
-        });
+        });*/
     }
 
     /**
@@ -53,6 +53,6 @@ class CreateUsersTable extends Migration
         Schema::connection('mysql')->drop('users');
 
         //Drop From Mongo
-        Schema::connection('mongoDB')->drop('users');
+        //Schema::connection('mongoDB')->drop('users');
     }
 }

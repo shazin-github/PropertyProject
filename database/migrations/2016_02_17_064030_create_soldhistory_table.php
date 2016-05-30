@@ -33,9 +33,9 @@ class CreateSoldhistoryTable extends Migration
         });
 
         //Create In Mongo
-        Schema::connection('mongoDB')->create('sold_history', function (Blueprint $table) {
+        /*Schema::connection('mongoDB')->create('sold_history', function (Blueprint $table) {
 
-        });
+        });*/
     }
 
     /**
@@ -49,6 +49,6 @@ class CreateSoldhistoryTable extends Migration
         Schema::connection('mysql')->drop('sold_history');
 
         //Drop From Mongo
-        Schema::connection('mongoDB')->drop('sold_history');
+        //Schema::connection('mongoDB')->drop('sold_history');
     }
 }

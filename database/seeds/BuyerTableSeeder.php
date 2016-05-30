@@ -32,11 +32,11 @@ class BuyerTableSeeder extends Seeder
             ]);
 
             // Insert In Mongo
-            $buyerMongo = BuyerMongo::create([
+            /*$buyerMongo = BuyerMongo::create([
                 '_id' => $buyer->id,
                 'property_id' => $property_id,
                 'user_id' => $user_id,
-            ]);
+            ]);*/
         }
     }
 }

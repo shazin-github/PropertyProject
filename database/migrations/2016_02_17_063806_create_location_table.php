@@ -29,9 +29,9 @@ class CreateLocationTable extends Migration
         });
 
         //Create In Mongo
-        Schema::connection('mongoDB')->create('location', function (Blueprint $table) {
+        /*Schema::connection('mongoDB')->create('location', function (Blueprint $table) {
 
-        });
+        });*/
     }
 
     /**
@@ -45,6 +45,6 @@ class CreateLocationTable extends Migration
         Schema::connection('mysql')->drop('location');
 
         //Drop From Mongo
-        Schema::connection('mongoDB')->drop('location');
+        //Schema::connection('mongoDB')->drop('location');
     }
 }

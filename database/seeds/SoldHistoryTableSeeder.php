@@ -41,7 +41,7 @@ class SoldHistoryTableSeeder extends Seeder
                 'description' => $description,
             ]);
 
-            $soldhistoryMongo = SoldHistoryMongo::create([
+            /*$soldhistoryMongo = SoldHistoryMongo::create([
                 '_id' => $soldhistory->id,
                 'property_id' => $property_id,
                 'seller_id' => $seller_id,
@@ -49,7 +49,7 @@ class SoldHistoryTableSeeder extends Seeder
                 'price_sqft' => $price_sqft,
                 'total_price' => $total_price,
                 'description' => $description,
-            ]);
+            ]);*/
         }
     }
 }

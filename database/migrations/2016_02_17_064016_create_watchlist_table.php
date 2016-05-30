@@ -28,9 +28,9 @@ class CreateWatchlistTable extends Migration
         });
 
         //Create In Mongo
-        Schema::connection('mongoDB')->create('watchlist', function (Blueprint $table) {
+        /*Schema::connection('mongoDB')->create('watchlist', function (Blueprint $table) {
 
-        });
+        });*/
 
     }
 
@@ -45,6 +45,6 @@ class CreateWatchlistTable extends Migration
         Schema::connection('mysql')->drop('watchlist');
 
         //Drop From Mongo
-        Schema::connection('mongoDB')->drop('watchlist');
+        //Schema::connection('mongoDB')->drop('watchlist');
     }
 }

@@ -34,13 +34,13 @@ class FeaturesTableSeeder extends Seeder
             ]);
 
             // Insert In Mongo
-            $featureMongo = FeaturesMongo::create([
+            /*$featureMongo = FeaturesMongo::create([
                 '_id' => $feature->id,
                 'bedrooms' => $bedrooms,
                 'bathrooms' => $bathrooms,
                 'utilities' => json_encode($utilities),
                 'property_id' => $property_id,
-            ]);
+            ]);*/
         }
     }
 }

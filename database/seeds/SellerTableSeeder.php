@@ -32,11 +32,11 @@ class SellerTableSeeder extends Seeder
             ]);
 
             // Insert In Mongo
-            $sellerMongo = SellerMongo::create([
+            /*$sellerMongo = SellerMongo::create([
                 '_id' => $seller->id,
                 'property_id' => $property_id,
                 'user_id' => $user_id,
-            ]);
+            ]);*/
         }
     }
 }

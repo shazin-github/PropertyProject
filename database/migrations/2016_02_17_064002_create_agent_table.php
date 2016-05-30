@@ -28,9 +28,9 @@ class CreateAgentTable extends Migration
         });
 
         //Create In Mongo
-        Schema::connection('mongoDB')->create('agent', function (Blueprint $table) {
+        /*Schema::connection('mongoDB')->create('agent', function (Blueprint $table) {
 
-        });
+        });*/
     }
 
     /**
@@ -44,6 +44,6 @@ class CreateAgentTable extends Migration
         Schema::connection('mysql')->drop('agent');
 
         //Drop From Mongo
-        Schema::connection('mongoDB')->drop('agent');
+        //Schema::connection('mongoDB')->drop('agent');
     }
 }
