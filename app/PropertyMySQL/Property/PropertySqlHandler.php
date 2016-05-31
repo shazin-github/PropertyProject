@@ -9,6 +9,8 @@ class PropertySqlHandler{
 
         $data['created_at'] = date('Y-m-d h:i:sa', strtotime('now'));
 
+        //$data['updated_at'] = date('Y-m-d h:i:sa', strtotime('now'));
+
         $id = DB::table('property')->insertGetId($data);
 
         if($id)
@@ -46,6 +48,9 @@ class PropertySqlHandler{
 
 
         if($result){
+            $p_id = $result[0]->prop_purpose_id;
+            $res = DB::table('property_purpose')->select('property_purpose.name')->where('id',$p_id)->get();
+            $result[0]->prop_purpose_id = $res[0]->name;
 
             return $result;
         }else{
@@ -87,7 +92,18 @@ class PropertySqlHandler{
             ->get();
         
         if($result){
-            return $result;
+            $results = array();
+
+            foreach($result as $mod_res){
+                $p_id = $mod_res->prop_purpose_id;
+                //dd($p_id);
+                $prop_purpose_id = DB::table('property_purpose')->select('property_purpose.name')->where('id',$p_id)->get();
+                //dd($prop_purpose_id[0]->name);
+                $mod_res->prop_purpose_id = $prop_purpose_id[0]->name;
+                $results[] = $mod_res;
+            }
+
+            return $results;
         }else{
             return false;
         }
@@ -182,17 +198,21 @@ class PropertySqlHandler{
 
         $latitude = $data['latitude'];
 
-        $purpose = (isset($data['purpose']) && !empty($data['purpose'])) ? strtolower($data['purpose']) : null;
+        $purpose = (isset($data['purpose']) && !empty($data['purpose'])) ? $data['purpose'] : null;
 
         $sql_purpose = '';
 
         if($purpose != null){
 
-            $sql_purpose = "And property.purpose like '$purpose'";
+
+
+            $p = DB::table('property_purpose')->select('property_purpose.id')->where('name',$purpose)->get();
+
+            $sql_purpose = "And property.prop_purpose_id =".$p[0]->id;
 
         }else{
 
-            $sql_purpose = "And ( property.purpose like 'rent' OR property.purpose like 'sale' )";
+            $sql_purpose = "And ( property.prop_purpose_id > 0 )";
 
         }
 
@@ -256,7 +276,6 @@ class PropertySqlHandler{
         }
 
         $loc_id = implode(',', $loc_ids);
-
         $properties = DB::select(
             DB::raw("select property.* , features.* , location.* from property
                     INNER JOIN features on property.id=features.property_id $sql_bath $sql_bed
@@ -270,7 +289,19 @@ class PropertySqlHandler{
 //            ]
         );
 
-        return $properties;
+        //return $properties;
+        $results = array();
+
+        foreach($properties as $mod_res){
+            $p_id = $mod_res->prop_purpose_id;
+            //dd($p_id);
+            $prop_purpose_id = DB::table('property_purpose')->select('property_purpose.name')->where('id',$p_id)->get();
+            //dd($prop_purpose_id[0]->name);
+            $mod_res->prop_purpose_id = $prop_purpose_id[0]->name;
+            $results[] = $mod_res;
+        }
+
+        return $results;
 
     }
 
@@ -301,7 +332,18 @@ class PropertySqlHandler{
 
         if($result){
 
-            return $result;
+            $results = array();
+
+            foreach($result as $mod_res){
+                $p_id = $mod_res->prop_purpose_id;
+                //dd($p_id);
+                $prop_purpose_id = DB::table('property_purpose')->select('property_purpose.name')->where('id',$p_id)->get();
+                //dd($prop_purpose_id[0]->name);
+                $mod_res->prop_purpose_id = $prop_purpose_id[0]->name;
+                $results[] = $mod_res;
+            }
+
+            return $results;
         }else{
 
             return false;
@@ -338,7 +380,18 @@ class PropertySqlHandler{
 
         if($result){
 
-            return $result;
+            $results = array();
+
+            foreach($result as $mod_res){
+                $p_id = $mod_res->prop_purpose_id;
+                //dd($p_id);
+                $prop_purpose_id = DB::table('property_purpose')->select('property_purpose.name')->where('id',$p_id)->get();
+               //dd($prop_purpose_id[0]->name);
+                $mod_res->prop_purpose_id = $prop_purpose_id[0]->name;
+                $results[] = $mod_res;
+            }
+
+            return $results;
         }else{
 
             return false;
