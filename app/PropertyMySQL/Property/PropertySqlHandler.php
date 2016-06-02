@@ -197,7 +197,30 @@ class PropertySqlHandler{
         $longitude = $data['longitude'];
 
         $latitude = $data['latitude'];
+        //property_type
+        $type = (isset($data['type']) && !empty($data['type'])) ? $data['type'] : null;
 
+        $sql_type = '';
+
+        if($type != null){
+            $t = DB::table('property_type')->select('prop_type_id')->where('name', $type)->get();
+            $sql_type = "And property.prop_type_id =".$t[0]->id;
+        }else{
+            $sql_type = "And ( property.prop_type_id > 0)";
+        }
+        //property_category
+        $category = (isset($data['category']) && !empty($data['category'])) ? $data['category'] : null;
+
+        $sql_category = '';
+
+        if($category != null){
+
+            $c = DB::table('property_category')->select('prop_category_id')->where('name', $category)->get();
+            $sql_category = "And property.prop_category_id =".$c[0]->id;
+        }else{
+            $sql_category = "And ( property.prop_category_id > 0)";
+        }
+        //propertty_purpose
         $purpose = (isset($data['purpose']) && !empty($data['purpose'])) ? $data['purpose'] : null;
 
         $sql_purpose = '';
@@ -292,12 +315,29 @@ class PropertySqlHandler{
         //return $properties;
         $results = array();
 
+        foreach ($properties as $mod_res) {
+            $t_id = $mod_res->prop_type_id;
+
+            $prop_type_id = DB::table('property_type')->select('property_type.name')->where('id', $t_id)->get();
+
+            $mod_res->prop_type_id = $prop_type_id[0]->name;
+            $results[] = $mod_res;
+        }
+
         foreach($properties as $mod_res){
             $p_id = $mod_res->prop_purpose_id;
             //dd($p_id);
             $prop_purpose_id = DB::table('property_purpose')->select('property_purpose.name')->where('id',$p_id)->get();
             //dd($prop_purpose_id[0]->name);
             $mod_res->prop_purpose_id = $prop_purpose_id[0]->name;
+            $results[] = $mod_res;
+        }
+
+        foreach($properties as $mod_res){
+            $c_id = $mod_res->prop_category_id;
+
+            $prop_category_id = DB::table('property_category')->select('property_category.name')->where('id',$c_id)->get();
+            $mod_res->prop_category_id = $prop_category_id[0]->name;
             $results[] = $mod_res;
         }
 
