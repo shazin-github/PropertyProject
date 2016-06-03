@@ -165,9 +165,6 @@ class PropertySqlHandler{
         }
 
         if($result){
-            $p_id = $result[0]->prop_purpose_id;
-            $res = DB::table('property_purpose')->select('property_purpose.name')->where('id',$p_id)->get();
-            $result[0]->prop_purpose_id = $res[0]->name;
 
             return $result;
         }else{
@@ -188,9 +185,6 @@ class PropertySqlHandler{
 
 
         if($result){
-            $p_id = $result[0]->prop_purpose_id;
-            $res = DB::table('property_purpose')->select('property_purpose.name')->where('id',$p_id)->get();
-            $result[0]->prop_purpose_id = $res[0]->name;
 
             return $result;
         }else{
