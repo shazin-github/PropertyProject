@@ -9,7 +9,7 @@ class PropertySqlHandler{
 
         $data['created_at'] = date('Y-m-d h:i:sa', strtotime('now'));
 
-        //$data['updated_at'] = date('Y-m-d h:i:sa', strtotime('now'));
+        $data['updated_at'] = date('Y-m-d h:i:sa', strtotime('now'));
 
         $id = DB::table('property')->insertGetId($data);
 
@@ -41,7 +41,7 @@ class PropertySqlHandler{
         $result = DB::table('property')
             ->join('features' , 'property.id' , '=', 'features.property_id' )
             ->join('location', 'property.loc_id','=', 'location.id')
-            ->select('*')
+            ->select('property.id', 'property.loc_id', 'property.prop_type_id', 'property.prop_purpose_id', 'property.prop_category_id', 'property.title', 'property.price', 'property.area', 'property.area_type', 'property.description', 'property.image_url', 'property.views', 'property.status as status','property.created_at', 'property.updated_at', 'location.address','location.city', 'location.zip', 'location.state','location.country', 'location.latitude', 'location.longitude', 'features.property_id', 'features.bedrooms', 'features.bathrooms', 'features.utilities')
             ->where('property.id',$data['id'])
             ->get();
 
@@ -65,13 +65,16 @@ class PropertySqlHandler{
         $result = DB::table('property')
             ->join('features' , 'property.id' , '=', 'features.property_id' )
             ->join('location', 'property.loc_id','=', 'location.id')
-            ->select('property.*','features.*','location.*')
+            ->select('property.id', 'property.loc_id', 'property.prop_type_id', 'property.prop_purpose_id', 'property.prop_category_id', 'property.title', 'property.price', 'property.area', 'property.area_type', 'property.description', 'property.image_url', 'property.views', 'property.status as status','property.created_at', 'property.updated_at', 'location.address','location.city', 'location.zip', 'location.state','location.country', 'location.latitude', 'location.longitude', 'features.property_id', 'features.bedrooms', 'features.bathrooms', 'features.utilities')
             ->where('location.city',$data['city'])
             ->get();
 
 
 
         if($result){
+            $p_id = $result[0]->prop_purpose_id;
+            $res = DB::table('property_purpose')->select('property_purpose.name')->where('id',$p_id)->get();
+            $result[0]->prop_purpose_id = $res[0]->name;
 
             return $result;
         }else{
@@ -162,6 +165,9 @@ class PropertySqlHandler{
         }
 
         if($result){
+            $p_id = $result[0]->prop_purpose_id;
+            $res = DB::table('property_purpose')->select('property_purpose.name')->where('id',$p_id)->get();
+            $result[0]->prop_purpose_id = $res[0]->name;
 
             return $result;
         }else{
@@ -182,6 +188,9 @@ class PropertySqlHandler{
 
 
         if($result){
+            $p_id = $result[0]->prop_purpose_id;
+            $res = DB::table('property_purpose')->select('property_purpose.name')->where('id',$p_id)->get();
+            $result[0]->prop_purpose_id = $res[0]->name;
 
             return $result;
         }else{
@@ -197,29 +206,7 @@ class PropertySqlHandler{
         $longitude = $data['longitude'];
 
         $latitude = $data['latitude'];
-        //property_type
-        $type = (isset($data['type']) && !empty($data['type'])) ? $data['type'] : null;
-
-        $sql_type = '';
-
-        if($type != null){
-            $t = DB::table('property_type')->select('prop_type_id')->where('name', $type)->get();
-            $sql_type = "And property.prop_type_id =".$t[0]->id;
-        }else{
-            $sql_type = "And ( property.prop_type_id > 0)";
-        }
-        //property_category
-        $category = (isset($data['category']) && !empty($data['category'])) ? $data['category'] : null;
-
-        $sql_category = '';
-
-        if($category != null){
-
-            $c = DB::table('property_category')->select('prop_category_id')->where('name', $category)->get();
-            $sql_category = "And property.prop_category_id =".$c[0]->id;
-        }else{
-            $sql_category = "And ( property.prop_category_id > 0)";
-        }
+        
         //propertty_purpose
         $purpose = (isset($data['purpose']) && !empty($data['purpose'])) ? $data['purpose'] : null;
 
@@ -315,29 +302,20 @@ class PropertySqlHandler{
         //return $properties;
         $results = array();
 
-        foreach ($properties as $mod_res) {
+        foreach($properties as $mod_res){
+
             $t_id = $mod_res->prop_type_id;
-
-            $prop_type_id = DB::table('property_type')->select('property_type.name')->where('id', $t_id)->get();
-
-            $mod_res->prop_type_id = $prop_type_id[0]->name;
-            $results[] = $mod_res;
-        }
-
-        foreach($properties as $mod_res){
             $p_id = $mod_res->prop_purpose_id;
-            //dd($p_id);
-            $prop_purpose_id = DB::table('property_purpose')->select('property_purpose.name')->where('id',$p_id)->get();
-            //dd($prop_purpose_id[0]->name);
-            $mod_res->prop_purpose_id = $prop_purpose_id[0]->name;
-            $results[] = $mod_res;
-        }
-
-        foreach($properties as $mod_res){
             $c_id = $mod_res->prop_category_id;
 
+            $prop_type_id = DB::table('property_type')->select('property_type.name')->where('id', $t_id)->get();
+            $prop_purpose_id = DB::table('property_purpose')->select('property_purpose.name')->where('id',$p_id)->get();
             $prop_category_id = DB::table('property_category')->select('property_category.name')->where('id',$c_id)->get();
+
+            $mod_res->prop_type_id = $prop_type_id[0]->name;
+            $mod_res->prop_purpose_id = $prop_purpose_id[0]->name;
             $mod_res->prop_category_id = $prop_category_id[0]->name;
+
             $results[] = $mod_res;
         }
 
