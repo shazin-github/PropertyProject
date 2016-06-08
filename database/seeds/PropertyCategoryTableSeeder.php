@@ -15,10 +15,10 @@ class PropertyCategoryTableSeeder extends Seeder
     {
 
         $propCategoryArray = array(
-            ['name'=> 'single person'],
-            ['name' => 'event'],
-            ['name' => 'family'],
-            ['name' => 'others']
+            ['name'=> 'Single Person'],
+            ['name' => 'Event'],
+            ['name' => 'Family'],
+            ['name' => 'Others']
             );
 
         foreach ($propCategoryArray as $key => $value) {

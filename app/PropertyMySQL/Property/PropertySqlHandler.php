@@ -281,7 +281,7 @@ class PropertySqlHandler{
 
         $loc_id = implode(',', $loc_ids);
         $properties = DB::select(
-            DB::raw("select property.* , features.* , location.* from property
+            DB::raw("select property.id, property.loc_id, property.prop_type_id, property.prop_purpose_id, property.prop_category_id, property.title, property.price, property.area, property.area_type,property.description,property.image_url,property.views, property.created_at, property.updated_at, features.bedrooms, features.bathrooms,features.utilities , location.address, location.city, location.zip, location.state, location.country, location.latitude, location.longitude from property
                     INNER JOIN features on property.id=features.property_id $sql_bath $sql_bed
                     INNER JOIN location on property.loc_id= location.id
                     WHERE property.loc_id IN ($loc_id) $sql_purpose ")

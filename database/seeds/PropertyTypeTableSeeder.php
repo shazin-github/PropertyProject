@@ -14,9 +14,10 @@ class PropertyTypeTableSeeder extends Seeder
     public function run()
     {
         $propTypeArray = array(
-            ['name'=> 'open-house'],
-            ['name' => 'house'],
-            ['name' => 'appartment'],
+            ['name'=> 'Home'],
+            ['name' => 'Plot'],
+            ['name' => 'Commercial'],
+            ['name' => 'Appartment'],
             );
 
         foreach ($propTypeArray as $key => $value) {
