@@ -334,6 +334,7 @@ class UsersController extends Controller{
             return $this->response->not_found('Not Found');
         }
     }
+
     public function confirmCode(){
 
         $data = $this->request->all();
@@ -358,5 +359,48 @@ class UsersController extends Controller{
 
     }
 
+    public function isAgent(){
+
+        $data = $this->request->all();
+
+        $validator = Validator::make($data , [
+            'user_id'=>'required',
+        ]);
+
+        if ($validator->fails()) {
+            return $this->response->bad_request($validator->errors()->all());
+        }
+
+        $result = $this->users->isAgent($data);
+
+        if($result){
+            return $this->response->success($result);
+        } else {
+            return $this->response->not_found('Not Found');
+        }
+    }
+
+    public function getPlanList(){
+
+        $result = $this->users->getPlanList();
+        if($result){
+            return $this->response->success($result);
+        } else {
+            return $this->response->not_found('Not Found');
+        }
+    }
+
+    public function getPlanDetail(){
+
+        $data = $this->request->all();
+
+        $result = $this->users->getPlanDetail($data);
+        if($result){
+            return $this->response->success($result);
+        } else {
+            return $this->response->not_found('Not Found');
+        }
+
+    }
 
 }

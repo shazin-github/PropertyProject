@@ -29,6 +29,18 @@ class Users{
 		}
 	}
 
+	public function isAgent($data){
+		$result = $this->UsersSqlHandler->isAgent($data);
+
+		if($result){
+			return $result;
+		}
+		else{
+			return false;
+		}
+
+	}
+
 	public function updateUser($data){
 		DB::beginTransaction();
 		try{
@@ -45,13 +57,10 @@ class Users{
 
 		$result = $this->UsersSqlHandler->userAuthenticate($data);
 
-
 		if($result){
 			return $result;
 		}
-
 		else{
-
 			return false;
 		}
 	}
@@ -103,4 +112,27 @@ class Users{
 			return false;
 		}
 	}
+
+	public  function getPlanList(){
+
+		$result = $this->UsersSqlHandler->getPlanList();
+
+		if($result){
+			return $result;
+		}else{
+			return false;
+		}
+	}
+
+	public  function getPlanDetail($data){
+
+		$result = $this->UsersSqlHandler->getPlanDetail($data);
+
+		if($result){
+			return $result;
+		}else{
+			return false;
+		}
+	}
+
 }

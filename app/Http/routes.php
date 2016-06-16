@@ -19,7 +19,11 @@ Route::group(['prefix' => 'v1'], function(){
 
 	Route::get('user/confirmCode' , 'UsersController@confirmCode');
 
+	Route::get('user/isAgent' , 'UsersController@isAgent');
 
+	Route::get('user/getPlanList' , "UsersController@getPlanList");
+
+	Route::get('user/getPlanDetail' , "UsersController@getPlanDetail");
 
 	// Location Api Route
 	Route::post('location', "LocationController@addLocation"); // for insert
@@ -35,7 +39,6 @@ Route::group(['prefix' => 'v1'], function(){
 	Route::get('Buyer/ByProperty' , "BuyerController@ShowBuyerbyProperty_Id" );   // for select
 	Route::get('Buyer/ByUser' , "BuyerController@ShowBuyerbyuser_Id" );   // for select
 
-
 	//Feature Api Route
 	Route::post('Feature', "FeaturesController@addFeature"); // for insert
 	Route::put('Feature/bypropertyid' , "FeaturesController@updateFeaturebyproperty_Id" );   // for update
@@ -45,8 +48,6 @@ Route::group(['prefix' => 'v1'], function(){
 	Route::get('Feature/showBybedrooms', "FeaturesController@ShowByNumberOfBedrooms");//search by number of bedrooms
 	Route::get('Feature/showBybathrooms', "FeaturesController@ShowByNumberOfBathrooms");//search by number of bathrooms
 	Route::get('Feature/ShowWithBathAndBedroomd' , "FeaturesController@ShowWithBathAndBedroomd");//group search
-
-
 
 	// Seller Api Route
 	Route::post('Seller', "SellerController@addSeller"); // for insert
@@ -107,7 +108,6 @@ Route::group(['prefix' => 'v1'], function(){
 	//property category
 	Route::get('property/getCategoryList' , 'PropertyCategoryController@getCategoryList');
 	Route::get('property/getCategoryById' , 'PropertyCategoryController@getCategoryById');
-
 
 
 });

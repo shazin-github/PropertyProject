@@ -52,7 +52,15 @@ class PropertySqlHandler{
             $res = DB::table('property_purpose')->select('property_purpose.name')->where('id',$p_id)->get();
             $result[0]->prop_purpose_id = $res[0]->name;
 
-            return $result;
+            $sellerId = DB::table('seller')->select('seller.user_id')->where('seller.property_id',$result[0]->property_id)->get();
+            $sellerDetail = DB::table('users')->select('*')->where('users.id',$sellerId[0]->user_id)->get();
+
+            $PropertyDetail = [
+              "property" => $result,
+                "sellerDetail" => $sellerDetail
+            ];
+
+            return $PropertyDetail;
         }else{
 
             return false;

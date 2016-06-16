@@ -10,13 +10,33 @@ class UsersSqlHandler{
 		$data['created_at'] = date('Y-m-d', strtotime('now'));
 		$data['loc_id'] = 1;
 
-
+		$agent = $data['isAgent'];
 		//$data['password'] = \Hash::make($data['password']);
+		unset($data['isAgent']);
 		$id = DB::table('users')->insertGetId($data);
 
+		if($agent){
 
-		if($id)
+			$agentData['user_id'] = $id;
+			$agentData['created_at'] = date('Y-m-d', strtotime('now'));
+			$agentData['updated_at'] = date('Y-m-d', strtotime('now'));
+			$agentId = DB::table('agent')->insertGetId($agentData);
+		}
+
+		if($id )
 			return $id;
+		else
+			return false;
+	}
+
+	public function isAgent($data){
+		$result = DB::table('agent')
+			->select('*')
+			->where('user_id' , $data['user_id'])
+			->get();
+
+		if($result)
+			return $result;
 		else
 			return false;
 	}
@@ -123,6 +143,14 @@ class UsersSqlHandler{
 		} else
 			return false;
 
+	}
+
+	public function getPlanList(){
+		//todo  ,
+	}
+
+	public function getPlanDetail($data){
+		//todo
 	}
 
 }
