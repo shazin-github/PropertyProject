@@ -14,8 +14,8 @@ class PropertyPurposeTableSeeder extends Seeder
     public function run()
     {
         $propPurposeArray = array(
-            ['name'=> 'rent'],
-            ['name' => 'for sale'],
+            ['name'=> 'Rent'],
+            ['name' => 'Sale'],
             );
 
         foreach ($propPurposeArray as $key => $value) {

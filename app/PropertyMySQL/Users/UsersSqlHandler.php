@@ -118,6 +118,7 @@ class UsersSqlHandler{
 
 		$result = DB::table('users')
 			->where('id' , $data['id'])
+			->select('id','firstname','lastname','email','phone','image_url', 'remember_token')
 			->get();
 
 		if($result)
