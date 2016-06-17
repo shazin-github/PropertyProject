@@ -118,7 +118,7 @@ class UsersSqlHandler{
 
 		$result = DB::table('users')
 			->where('id' , $data['id'])
-			->select('id','firstname','lastname','email','phone','image_url', 'remember_token')
+			->select('*')
 			->get();
 
 		if($result)
@@ -147,11 +147,27 @@ class UsersSqlHandler{
 	}
 
 	public function getPlanList(){
-		//todo  ,
+
+		$result = DB::table('user_plan')
+			->select('*')->get();
+
+		if($result)
+			return $result;
+		else
+			return false;
+
 	}
 
 	public function getPlanDetail($data){
-		//todo
+		$result = DB::table('user_plan')
+			->where('id',$data['planId'])
+			->select('*')->get();
+
+		if($result)
+			return $result;
+		else
+			return false;
+
 	}
 
 }

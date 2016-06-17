@@ -25,6 +25,8 @@ Route::group(['prefix' => 'v1'], function(){
 
 	Route::get('user/getPlanDetail' , "UsersController@getPlanDetail");
 
+	Route::get('user/switchToAgent' , "UsersController@switchToAgent");
+
 	// Location Api Route
 	Route::post('location', "LocationController@addLocation"); // for insert
 	Route::put('location' ,"LocationController@updateLocationbyID"); // for update
